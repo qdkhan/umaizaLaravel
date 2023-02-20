@@ -1,0 +1,9 @@
+<script type="text/javascript" src="{{url('front-end/js/jquery.js')}}"></script>
+<script type="text/javascript" src="{{url('front-end/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{url('front-end/js/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{url('front-end/js/jquery.colorbox.js')}}"></script>
+<script type="text/javascript" src="{{url('front-end/js/isotope.js')}}"></script>
+<script type="text/javascript" src="{{url('front-end/js/ini.isotope.js')}}"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+<script type="text/javascript" src="{{url('front-end/js/gmap3.js')}}"></script>
+<script type="text/javascript" src="{{url('front-end/js/custom.js')}}"></script>
