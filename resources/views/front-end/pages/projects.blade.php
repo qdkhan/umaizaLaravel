@@ -114,7 +114,7 @@
          <div class="col-md-4 col-sm-6 col-xs-12 infrastructure isotope-item">
             <div class="isotope-img-container">
                <a class="gallery-popup" href="{{ asset('storage/projects/project3.jpg')}}">
-               <img class="img-responsive" src="{{ asset('storage/projects/project5.jpg')}}" alt="">
+               <img class="img-responsive" src="{{ asset('storage/projects/project3.jpg')}}" alt="">
                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                </a>
                <div class="project-item-info">

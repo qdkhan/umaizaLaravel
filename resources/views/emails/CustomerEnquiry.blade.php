@@ -1,5 +1,5 @@
 <x-mail::message>
-# Hello! UC Enterprises, Here is new enquiry
+# Hello! Umaiza Construction Pvt Ltd., Here is new enquiry
 <b>Name: </b> {{ $data['name'] }} <br/>
 <b>Email: </b> {{ $data['email'] }} <br/>
 <b>Mobile: </b> {{ $data['mobile'] }} <br/>

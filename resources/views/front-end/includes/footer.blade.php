@@ -5,7 +5,7 @@
             <div class="col-md-3 col-sm-12 footer-widget footer-about">
                <h3 class="widget-title">About Us</h3>
                <img class="footer-logo" src="{{ asset('storage/logo1.jpg') }}" alt="" style="width:80px;height:80px;"/>
-               <p>UC Enterprises a leading Manpower consultant and training center and Construction Servicing in UP, Delhi, Himachal Pradesh and Uttrakhand since 2005.</p>
+               <p>Umaiza Construction Pvt Ltd. a leading in projects Construction, Civil and Interior maintenanace Servicing in Mumbai, Delhi, Himachal Pradesh and Uttrakhand, UP and All over India since 2005.</p>
                <div class="footer-social">
                </div>
             </div>
@@ -14,9 +14,9 @@
                <div class="working-hours">
                   We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
                   Hotline and Contact form.
-                  <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
-                  <br> Saturday: <span class="text-right">12:00 - 15:00</span>
-                  <br> Sunday and holidays: <span class="text-right">09:00 - 12:00</span>
+                  <br><br> Monday - Friday: <span class="text-right">10:00 - 18:00 </span>
+                  <br> Saturday: <span class="text-right">10:00 - 14:00</span>
+                  <br> Sunday: <span class="text-right">Closed</span>
                </div>
             </div>
             <div class="col-md-2 col-sm-12 footer-widget">
@@ -31,7 +31,7 @@
                </ul>
             </div>
             <div class="col-md-4 col-sm-12 footer-widget">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.566075965541!2d80.95972161504439!3d26.885524183139275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDUzJzA3LjkiTiA4MMKwNTcnNDIuOSJF!5e0!3m2!1sen!2sin!4v1607533435002!5m2!1sen!2sin" width="100%" height="280" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.047795014553!2d72.8741117!3d19.061636099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f66aba9739%3A0x76369bf52920b524!2sUmaiza%20Construction%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1694573072398!5m2!1sen!2sin" width="100%" height="280" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-hidden="false" tabindex="0"></iframe>
             </div>
          </div>
       </div>
@@ -41,7 +41,7 @@
          <div class="row">
             <div class="col-xs-12 col-sm-6">
                <div class="copyright-info">
-                  <span>Copyright UC Enterprises © <? date('Y') ?> . Proudly Designed and Developed by <span title="(+91) 9616279623">QD Khan</span>
+                  <span>Copyright Umaiza Construction Pvt Ltd. © <?=date('Y') ?> . Proudly Designed and Developed by <span title="(+91) 9616279623">QD Khan</span>
                   </span>
                </div>
             </div>

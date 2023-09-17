@@ -21,7 +21,7 @@
 {{-- Footer --}}
 <x-slot:footer>
 <x-mail::footer>
-© {{ date('Y') }} UC Enterprises. @lang('All rights reserved.')
+© {{ date('Y') }} Umaiza Construction Pvt Ltd.. @lang('All rights reserved.')
 </x-mail::footer>
 </x-slot:footer>
 </x-mail::layout>

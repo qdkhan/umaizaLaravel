@@ -3,7 +3,7 @@
       <div class="row">
          <div class="navbar-header">
             <div class="logo">
-               <a href="index.php">
+               <a href="/">
                <img src="{{asset('storage/logo1.jpg')}}" alt="logo" style="width:80px;height:80px;">
                </a>
             </div>

@@ -8,7 +8,7 @@
             <div class="box-slider-text">
                <h2 class="box-slide-title">17 Years Of Excellence In</h2>
                <h3 class="box-slide-sub-title">Construction Industry</h3>
-               <p class="box-slide-description">UC Enterprises is the leader among infrastructure companies in India.  The company was founded in Lcknow in 2005 by Shakeel Shah & Sons.</p>
+               <p class="box-slide-description">Umaiza Construction Pvt Ltd. is the leader among infrastructure companies in India.  The company was founded in Lcknow in 2005 by Shakeel Shah & Sons.</p>
                <p>
                   <a href="{{ route('front.company') }}" class="slider btn btn-primary">Know Us</a>
                </p>
@@ -70,7 +70,7 @@
             </div>
             <div class="col-md-2">
                <div class="call-to-action-btn">
-                  <a class="btn btn-primary" href="{{ route('front.contact') }}">Get In Touch</a>
+                  <a class="btn btn-primary" href="{{ route('front.contact') }}">Get In Touch For Solution</a>
                </div>
             </div>
          </div>
@@ -89,7 +89,7 @@
                   <img src="{{asset('storage/icon-image/team_worker.png')}}" alt="" />
                </div>
                <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Manpower Consultancy</a></h3>
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Manpower Supply</a></h3>
                   <p class="text-justify">
                      Once the potential candidate has been identified, the next step is his selection test, oral or practical, by the employer or his authorized representative. In case we are entrusted with the selection & testing of the prospective employee, we conduct it with the help of a panel of experts, for technical & professional categories, under direct supervision of our professional executives.
                   </p>
@@ -100,15 +100,15 @@
          <div class="col-md-4">
             <div class="ts-service-box">
                <div class="ts-service-image-wrapper">
-                  <img class="img-responsive" src="{{asset('storage/services/training.jpg')}}" alt="service2">
+                  <img class="img-responsive" src="{{asset('storage/services/maintenance.jpg')}}" alt="service2">
                </div>
                <div class="ts-service-box-img pull-left">
                   <img src="{{asset('storage/icon-image/training.png')}}" alt="" />
                </div>
                <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Site Training Center</a></h3>
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Maintenance &#38; Repair Services</a></h3>
                   <p class="text-justify">
-                     We are are providing training in the field of construction for numerous civil and interior work like "Tiles, Marbles, Granite, Plumbing, Air Conditioner, Painting, Fire Fighting system, Carpentry, Glass, Fabrication, Welder, Aluminium Partion, False Ceiling, Land Survey,Electrical, Matting, Water Proofing, Ducting, Steel Railing, & Spray Painting etc. After successfully completing the training we will provide certificate." 
+                  Umaiza Construction Pvt Ltd  transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time.
                   </p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
@@ -123,8 +123,8 @@
                   <img src="{{asset('storage/icon-image/service-icon3.png')}}" alt="" />
                </div>
                <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Construction Civil & Interior</a></h3>
-                  <p class="text-justify">Because of hard work we are best and the leading construction company in the region. Our employees are our pearl, they make work completed on time. Our priority is client’s requirement and satisfaction, and by work we make their dream come true. Also one of the main reason for our achievement is we provide services at affordable price.</p>
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">All Types Of Construction Hub</a></h3>
+                  <p class="text-justify">Welcome to Umaiza Construction Pvt Ltd we transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time. </p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -186,11 +186,21 @@
          <div class="col-md-4">
             <div class="ts-service-box">
                <div class="ts-service-box-img pull-left">
+                  <img src="{{asset('storage/icon-image/fact1.png')}}" alt="" />
+               </div>
+               <div class="ts-service-box-info">
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Project Construction</a></h3>
+                  <p>We are the top contractors who offer house construction services in India.....</p>
+                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
+               </div>
+            </div>
+            <div class="ts-service-box">
+               <div class="ts-service-box-img pull-left">
                   <img src="{{asset('storage/icon-image/service-icon1.png')}}" alt="" />
                </div>
                <div class="ts-service-box-info">
-                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Home Construction</a></h3>
-                  <p>We are the top contractors who offer house construction services in India.....</p>
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">All type RCC Structure</a></h3>
+                  <p>We are construct all types of RCC structure .....</p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -220,7 +230,17 @@
                </div>
                <div class="ts-service-box-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">Sale Purchase</a></h3>
-                  <p>UC Enterprises is also working in the field of sale and purchase of building materials....</p>
+                  <p>Umaiza Construction Pvt Ltd. is also working in the field of sale and purchase of building materials....</p>
+                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
+               </div>
+            </div>
+            <div class="ts-service-box">
+               <div class="ts-service-box-img pull-left">
+                  <img src="{{asset('storage/icon-image/real-state.png')}}" alt="" />
+               </div>
+               <div class="ts-service-box-info">
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Real State</a></h3>
+                  <p>Umaiza Construction Pvt Ltd. Pvt. Ltd has real property that consists of land and improvements...</p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -229,6 +249,16 @@
             <img class="service-center-img img-responsive" src="{{asset('storage/services/service-center.jpg')}}" alt="" />
          </div>
          <div class="col-md-4">
+         <div class="ts-service-box">
+               <div class="ts-service-box-img pull-left">
+                  <img src="{{asset('storage/icon-image/service-icon4.png')}}" alt="" />
+               </div>
+               <div class="ts-service-box-info">
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Exterior Work</a></h3>
+                  <p>We consult the client about all type of exterior work ? We have planning to develop your Exterior work.....</p>
+                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
+               </div>
+            </div>
             <div class="ts-service-box">
                <div class="ts-service-box-img pull-left">
                   <img src="{{asset('storage/icon-image/service-icon4.png')}}" alt="" />
@@ -236,6 +266,16 @@
                <div class="ts-service-box-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">Exterior Design</a></h3>
                   <p>We consult the client about exterior Design? We have planning to develop your home.....</p>
+                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
+               </div>
+            </div>
+            <div class="ts-service-box">
+               <div class="ts-service-box-img pull-left">
+                  <img src="{{asset('storage/icon-image/service-icon5.png')}}" alt="" />
+               </div>
+               <div class="ts-service-box-info">
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Building, Home Construction</a></h3>
+                  <p>We construct all type of building and home accordingly clied client need.....</p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -256,16 +296,6 @@
                <div class="ts-service-box-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">Safety Management</a></h3>
                   <p>Safety performance monitoring should be performed by we to avoid injuries and fatalities...</p>
-                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
-               </div>
-            </div>
-            <div class="ts-service-box">
-               <div class="ts-service-box-img pull-left">
-                  <img src="{{asset('storage/icon-image/real-state.png')}}" alt="" />
-               </div>
-               <div class="ts-service-box-info">
-                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Real State</a></h3>
-                  <p>UC Enterprises Pvt. Ltd has real property that consists of land and improvements...</p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -322,13 +352,14 @@
          <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="subscribe-call-to-acton">
                <h4>Can We Help?</h4>
+               <h4><a href="tel:+917860066002" target="_blank">(+91) 786 006 6002 </a></h4>
             </div>
          </div>
          <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="ts-newsletter">
                <div class="newsletter-introtext">
-                  <h4><a href="tel:+919415346597" target="_blank">(+91) 941 534 6597</a></h4>
-                  <p>ucenterpriseslko@gmail.com</p>
+                  <h4><a href="#">Office:- (+91) 831 836 1961, (+91) 739 894 6970</a></h4>
+                  <p>umaizaconstruction@gmail.com</p>
                </div>
             </div>
          </div>
