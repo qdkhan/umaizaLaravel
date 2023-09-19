@@ -25,7 +25,7 @@
          <h3 class="section-sub-title">Find Our Location</h3>
       </div>
       <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-map-marker"></i>
@@ -38,7 +38,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv mb-md-0 mb-3">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-envelope"></i>
@@ -50,7 +50,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv mb-md-0 mb-3">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-phone-square"></i>
@@ -65,7 +65,7 @@
       </div>
       <div class="gap-20"></div>
       <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-map-marker"></i>
@@ -78,7 +78,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-envelope"></i>
@@ -90,7 +90,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-phone-square"></i>
@@ -105,7 +105,7 @@
       </div>
       <div class="gap-20"></div>
       <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-map-marker"></i>
@@ -118,7 +118,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-envelope"></i>
@@ -130,7 +130,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-4">
+         <div class="col-md-4 customDiv">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-phone-square"></i>
