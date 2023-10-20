@@ -3,6 +3,13 @@
 @section('content')
 <main id="main" class="main">
    <div class="pagetitle">
+      @if(session()->has("success"))
+         <div class="alert alert-success mt-2" role="alert">{{session("success")}}</div>
+      @endif
+
+      @if(session()->has("deleted"))
+         <div class="alert alert-danger mt-2" role="alert">{{session("deleted")}}</div>
+      @endif
       <h1>Projects</h1>
       <nav>
          <ol class="breadcrumb">
@@ -10,7 +17,8 @@
             <li class="breadcrumb-item active">Projects</li>
          </ol>
       </nav>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal">Add Projects</button>
+      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal">Add Projects</button> -->
+      <a type="button" class="btn btn-primary" href="{{url('get-update-project')}}">Add Projects</a>
    </div>
    <section class="section dashboard">
       <div class="row">
@@ -24,25 +32,39 @@
                            <thead>
                               <tr>
                                  <th scope="col">#</th>
-                                 <th scope="col">Customer</th>
-                                 <th scope="col">Product</th>
-                                 <th scope="col">Price</th>
-                                 <th scope="col">Status</th>
+                                 <th scope="col">Name</th>
+                                 <th scope="col">Description</th>
+                                 <th scope="col">Client</th>
+                                 <th scope="col">Architect</th>
+                                 <th scope="col">Location</th>
+                                 <th scope="col">Size</th>
+                                 <th scope="col">Year</th>
+                                 <th scope="col">Category</th>
+                                 <th scope="col">Image</th>
+                                 <th scope="col">Date</th>
                                  <th scope="col">Action</th>
                               </tr>
                            </thead>
                            <tbody>
-                              <tr>
-                                 <th scope="row"><a href="#">#2457</a></th>
-                                 <td>Brandon Jacob</td>
-                                 <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                                 <td>$64</td>
-                                 <td><span class="badge bg-success">Approved</span></td>
-                                 <td>
-                                    <span class="badge rounded-pill bg-primary"><i class="bi bi-box-arrow-in-up-right"></i></span>
-                                    <span class="badge rounded-pill bg-danger"><i class="bi bi-x-square"></i><span>
-                                 </td>
-                              </tr>
+                              @foreach($data as $key => $data)
+                                 <tr>
+                                    <th scope="row">{{$key+1}}</th>
+                                    <td>{{$data->name}}</td>
+                                    <td>{{$data->description}}</td>
+                                    <td>{{$data->client}}</td>
+                                    <td>{{$data->architect}}</td>
+                                    <td>{{$data->location}}</td>
+                                    <td>{{$data->size}}</td>
+                                    <td>{{$data->year}}</td>
+                                    <td>{{$data->category_name}}</td>
+                                    <td><img src={!! displayImage($data->image) !!} width="100px" height="100px" class="img-responsive rounded-circle"></td>
+                                    <td>{{$data->created_at}}</td>
+                                    <td>
+                                    <a href="{{url('get-update-project', [$data->id])}}"><span class="badge rounded-pill bg-primary"><i class="bi bi-box-arrow-in-up-right"></i></span></a>
+                                    <a href="{{route('backend.project_delete', [$data->id])}}"><span class="badge rounded-pill bg-danger"><i class="bi bi-x-square"></i><span></a>
+                                    </td>
+                                 </tr>
+                              @endforeach
                            </tbody>
                         </table>
                      </div>

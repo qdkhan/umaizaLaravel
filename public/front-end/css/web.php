@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 Route::controller(FrontController::class)->name('front.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/company', 'company')->name('company');
-    Route::get('/projects/{category_id?}', 'projects')->name('projects');
+    Route::get('/projects', 'projects')->name('projects');
     Route::get('/services', 'services')->name('services');
     Route::get('/news', 'news')->name('news');
     Route::get('/contact', 'contact')->name('contact');
@@ -17,8 +17,6 @@ Route::controller(FrontController::class)->name('front.')->group(function () {
         Artisan::call('optimize:clear');
         Artisan::call('storage:link');
         Artisan::call('migrate');
-        Artisan::call('config:cache');
-        exec('composer dump-autoload');
     });
 });
 
@@ -32,19 +30,21 @@ Route::controller(BackendController::class)->name('backend.')->group(function ()
     });
 
     //Teams
-    Route::get('/team-list', 'teamList');
-    Route::match(['GET', 'POST'], '/get-update-team/{id?}', [BackendController::class, 'getUpdateTeam']);
-    Route::get('/team-delete/{id}', 'teamDelete')->name('team_delete');
+    Route::get('/team-list', function(){
+        return view('back-end.pages.teams');
+    });
+    Route::match(['GET', 'POST'], '/get-update-team/{id?}', [BackendController::class, 'createTeam']);
 
-    //Category
-    Route::get('/category-list', 'categoryList');
-    Route::match(['GET', 'POST'], '/get-update-category/{id?}', 'getUpdateCategory');
-    Route::get('/category-delete/{id}', 'categoryDelete')->name('category_delete');
-
-    //Project
-    Route::get('/project-list', 'projectList');
-    Route::match(['GET', 'POST'], '/get-update-project/{id?}', 'getUpdateProject');
-    Route::get('/project-delete/{id}', 'projectDelete')->name('project_delete');
+    //Projects
+    Route::get('/category-list', function(){
+        return view('back-end.pages.category');
+    });
+    Route::match(['GET', 'POST'], '/get-update-category', function(){
+        return view('back-end.pages.dashboard');
+    });
+    Route::get('/project-list', function(){
+        return view('back-end.pages.projects');
+    });
 
     //Enquiry List
     Route::get('/enquiry-list', function(){

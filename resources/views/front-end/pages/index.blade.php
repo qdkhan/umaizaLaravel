@@ -8,7 +8,7 @@
             <div class="box-slider-text">
                <h2 class="box-slide-title">17 Years Of Excellence In</h2>
                <h3 class="box-slide-sub-title">Construction Industry</h3>
-               <p class="box-slide-description">Umaiza Construction Pvt Ltd. is the leader among infrastructure companies in India.  The company was founded in Lcknow in 2005 by Shakeel Shah & Sons.</p>
+               <p class="box-slide-description">Umeza Construction Pvt Ltd. is the leader among infrastructure companies in India.  The company was founded in Lcknow in 2005 by Shakeel Shah & Sons.</p>
                <p>
                   <a href="{{ route('front.company') }}" class="slider btn btn-primary">Know Us</a>
                </p>
@@ -108,7 +108,7 @@
                <div class="ts-service-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">Maintenance &#38; Repair Services</a></h3>
                   <p class="text-justify">
-                  Umaiza Construction Pvt Ltd  transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time.
+                  Umeza Construction Pvt Ltd  transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time.
                   </p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
@@ -124,7 +124,7 @@
                </div>
                <div class="ts-service-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">All Types Of Construction Hub</a></h3>
-                  <p class="text-justify">Welcome to Umaiza Construction Pvt Ltd we transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time. </p>
+                  <p class="text-justify">Welcome to Umeza Construction Pvt Ltd we transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time. </p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -230,7 +230,7 @@
                </div>
                <div class="ts-service-box-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">Sale Purchase</a></h3>
-                  <p>Umaiza Construction Pvt Ltd. is also working in the field of sale and purchase of building materials....</p>
+                  <p>Umeza Construction Pvt Ltd. is also working in the field of sale and purchase of building materials....</p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -240,7 +240,7 @@
                </div>
                <div class="ts-service-box-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">Real State</a></h3>
-                  <p>Umaiza Construction Pvt Ltd. Pvt. Ltd has real property that consists of land and improvements...</p>
+                  <p>Umeza Construction Pvt Ltd. Pvt. Ltd has real property that consists of land and improvements...</p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
@@ -359,7 +359,7 @@
             <div class="ts-newsletter">
                <div class="newsletter-introtext">
                   <h4><a href="#">Office:- (+91) 831 836 1961, (+91) 739 894 6970</a></h4>
-                  <p>umaizaconstruction@gmail.com</p>
+                  <p>Umezaconstruction@gmail.com</p>
                </div>
             </div>
          </div>

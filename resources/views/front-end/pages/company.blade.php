@@ -1,5 +1,5 @@
 @extends('front-master')
-@section('title', 'About Us | Umaiza Construction Pvt Ltd.')
+@section('title', 'About Us | Umeza Construction Pvt Ltd.')
 @section('content')
 <div id="banner-area" class="banner-area" style="background-image:url('{{ asset('storage/banner/banner1.jpg')}}')">
    <div class="banner-text">
@@ -23,8 +23,8 @@
       <div class="row">
          <div class="col-md-6">
             <h3 class="column-title">Who We Are</h3>
-            <p>Welcome to Umaiza Construction Pvt Ltd.  It is one of the top Manpower Consultants and training centre in Lucknow, Noida, Gurgaon, Himachal Pradesh, Ghaziabad and we Offering full project management, our passionate, highly talented & skilled team are recognized for their expertise, professionalism and attention to detail.</p>
-            With a wealth of in-house tradesmen, a trusted supplier network built up over two decades, Umaiza Construction Pvt Ltd.  Manpower Consultants and training centre offers a complete end-to-end service. 
+            <p>Welcome to Umeza Construction Pvt Ltd.  It is one of the top Manpower Consultants and training centre in Lucknow, Noida, Gurgaon, Himachal Pradesh, Ghaziabad and we Offering full project management, our passionate, highly talented & skilled team are recognized for their expertise, professionalism and attention to detail.</p>
+            With a wealth of in-house tradesmen, a trusted supplier network built up over two decades, Umeza Construction Pvt Ltd.  Manpower Consultants and training centre offers a complete end-to-end service. 
             <blockquote>
                <p>The  has achieved excellent reputation through all these years and this is an ongoing process as it continues to build a good reputation by quoting competitive pricing, keeping the integrity and giving the right concern for each and every customer’s respective requirements.</p>
             </blockquote>
@@ -97,7 +97,7 @@
                      <i class="fa fa-instagram" target="_blank"></i>
                      </span>
                      </a>
-                     <a title="Linkdin" href="https://www.linkedin.com/in/umaizaconstruction" target="_blank">
+                     <a title="Linkdin" href="https://www.linkedin.com/in/Umezaconstruction" target="_blank">
                      <span class="social-icon">
                      <i class="fa fa-linkedin" target="_blank"></i>
                      </span>
@@ -281,7 +281,7 @@
                   <p class="ts-description">
                   </p>
                   <div class="team-social-icons">
-                     <a title="Facebook" href="https://www.facebook.com/Umaiza-construction-pvt-ltd-114157273783436/" target="_blank">
+                     <a title="Facebook" href="https://www.facebook.com/Umeza-construction-pvt-ltd-114157273783436/" target="_blank">
                      <span class="social-icon">
                      <i class="fa fa-facebook"></i>
                      </span>
@@ -318,7 +318,7 @@
                      <!-- Some Text Here -->
                   </p>
                   <div class="team-social-icons">
-                     <a title="Facebook" href="https://www.facebook.com/Umaiza-construction-pvt-ltd-114157273783436/" target="_blank">
+                     <a title="Facebook" href="https://www.facebook.com/Umeza-construction-pvt-ltd-114157273783436/" target="_blank">
                      <span class="social-icon">
                      <i class="fa fa-facebook"></i>
                      </span>
@@ -351,7 +351,7 @@
                      <!-- Some Text Here -->
                   </p>
                   <div class="team-social-icons">
-                     <a title="Facebook" href="https://www.facebook.com/Umaiza-construction-pvt-ltd-114157273783436/" target="_blank">
+                     <a title="Facebook" href="https://www.facebook.com/Umeza-construction-pvt-ltd-114157273783436/" target="_blank">
                      <span class="social-icon">
                      <i class="fa fa-facebook"></i>
                      </span>
@@ -604,7 +604,7 @@
                   <h3 class="ts-name">Md Juned Advocate</h3>
                   <p class="ts-designation">Legal Advisor</p>
                   <div class="team-social-icons">
-                     <a title="Facebook" href="https://www.facebook.com/Umaiza-construction-pvt-ltd-114157273783436/" target="_blank">
+                     <a title="Facebook" href="https://www.facebook.com/Umeza-construction-pvt-ltd-114157273783436/" target="_blank">
                      <span class="social-icon">
                      <i class="fa fa-facebook"></i>
                      </span>
@@ -632,7 +632,7 @@
                   <h3 class="ts-name">Krishna</h3>
                   <p class="ts-designation">Carpenter Manager</p>
                   <div class="team-social-icons">
-                     <a title="Facebook" href="https://www.facebook.com/Umaiza-construction-pvt-ltd-114157273783436/" target="_blank">
+                     <a title="Facebook" href="https://www.facebook.com/Umeza-construction-pvt-ltd-114157273783436/" target="_blank">
                      <span class="social-icon">
                      <i class="fa fa-facebook"></i>
                      </span>

@@ -26,7 +26,7 @@
                   <a title="Twitter" href="https://twitter.com/UCPLSERVICES" target="_blank">
                   <span class="social-icon"><i class="fa fa-twitter" target="_blank"></i></span>
                   </a>
-                  <a title="Instagram" href="https://instagram.com/UMAIZA_CONSTRUCTION_PVT_LTD">
+                  <a title="Instagram" href="https://instagram.com/UMAIZA_CONSTRUCTION_PVT_LTD" target="_blank">
                   <span class="social-icon"><i class="fa fa-instagram" target="_blank"></i></span>
                   </a>
                   <a title="Linkdin" href="https://www.linkedin.com/in/umaizaconstruction" target="_blank">
@@ -35,7 +35,7 @@
                   <a title="Youtube" href="https://youtube.com/@UCPLServices?si=GjREeYJfsH-BhlW0" target="_blank">
                   <span class="social-icon"><i class="fa fa-youtube-play" target="_blank"></i></span>
                   </a>
-                  <a title="Login" href="https://sg3plcpnl0026.prod.sin3.secureserver.net:2096/" target="_blank">
+                  <a title="Login" href="https://mail.hostinger.com/?_task=mail&_mbox=INBOX" target="_blank">
                   <span class="social-icon"><i class="fa fa-sign-in" target="_blank"></i></span>
                   </a>
                </li>

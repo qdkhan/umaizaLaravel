@@ -6,9 +6,6 @@ use Illuminate\Http\Request;
 use App\Mail\CustomerEnquiry;
 use Illuminate\Support\Facades\Mail;
 use App\Models\CustomerEnquiry as EnquiryModel;
-use App\Models\Category;
-use App\Models\Project;
-use App\Models\Team;
 use Illuminate\Support\Facades\Validator;
 
 class FrontController extends Controller
@@ -18,23 +15,11 @@ class FrontController extends Controller
     }
 
     public function company() {
-        $team = Team::select('*')->get();
-        return view('front-end.pages.company', ['team' => $team]);
+        return view('front-end.pages.company');
     }
 
-    public function projects($category_id = null) {
-        try{
-            $categories = Category::select('id','name','slug')->get();
-            $data = Project::select('projects.id', 'projects.name', 'projects.description', 'projects.client', 'projects.architect', 'projects.location', 'projects.size', 'projects.year', 'projects.category_id', 'projects.image', 'projects.created_at', 'categories.name as category_name', 'categories.slug')
-                            ->when($category_id, function ($query) use ($category_id) {
-                                    $query->where('category_id', $category_id);
-                                })
-                            ->leftJoin('categories', 'categories.id', '=', 'projects.category_id')
-                            ->get();
-            return view('front-end.pages.projects', ['projects' => $data, 'categories' => $categories]);
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
+    public function projects() {
+        return view('front-end.pages.projects');
     }
 
     public function services() {
@@ -52,7 +37,7 @@ class FrontController extends Controller
     public function sendEnquiry(Request $request) {
         try {
             $validate = Validator::make($request->all(), [
-                'name'      => 'required|min:3',
+                'name'      => 'required',
                 'email'     => 'required|email|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                 'mobile'    => 'required|digits_between:10,15',
             ]);
@@ -70,7 +55,7 @@ class FrontController extends Controller
             $enquiry->save();
             
             if($enquiry->id) {
-                Mail::to('care@umaizaconstruction.com')->send(new CustomerEnquiry($request->all()));
+                Mail::to('qdkhan05@gmail.com')->send(new CustomerEnquiry($request->all()));
             }
             return redirect()->back()->with('success', 'Hello! your query has been saved, We will contact you soon.');
         } catch (\Exception $e) {

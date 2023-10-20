@@ -48,7 +48,7 @@
                <div class="ts-service-info text-justify">
                   <h3 class="service-box-title"><a href="#">Maintenance and Repair Services</a></h3>
                   <p class="text-justify">
-                     Umaiza Construction Pvt Ltd  transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time.
+                     Umeza Construction Pvt Ltd  transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time.
                   </p>
                </div>
             </div>
@@ -94,7 +94,7 @@
                </div>
                <div class="ts-service-info text-justify">
                   <h3 class="service-box-title"><a href="#">Interior Design</a></h3>
-                  <p> At Umaiza Construction, we focus on bringing interior design and construction together from the first time we talk with our customers. Our team has years of experience in handling large interior design projects, and we also have worked with professional interior design and architecture firms in the past.</p>
+                  <p> At Umeza Construction, we focus on bringing interior design and construction together from the first time we talk with our customers. Our team has years of experience in handling large interior design projects, and we also have worked with professional interior design and architecture firms in the past.</p>
                </div>
             </div>
          </div>
@@ -154,7 +154,7 @@
                </div>
                <div class="ts-service-info text-justify">
                   <h3 class="service-box-title"><a href="#">Real State</a></h3>
-                  <p>Umaiza Construction Pvt. Ltd. is one of the prominent names in the development of residential & commercial projects of various sizes and prices ensuring that we have everything as per our customer’s requirements and convenience. We take pride in being amongst the leading real estate developers in North India and we achieved this feat because we perform best and ethical business processes and execute these processes with due diligence and accuracy.</p>
+                  <p>Umeza Construction Pvt. Ltd. is one of the prominent names in the development of residential & commercial projects of various sizes and prices ensuring that we have everything as per our customer’s requirements and convenience. We take pride in being amongst the leading real estate developers in North India and we achieved this feat because we perform best and ethical business processes and execute these processes with due diligence and accuracy.</p>
                </div>
             </div>
          </div>
@@ -267,7 +267,7 @@
                </div>
                <div class="ts-service-info text-justify">
                   <h3 class="service-box-title"><a href="#">Sale Purchase</a></h3>
-                  <p>Umaiza Construction Pvt. Ltd. is also working in the field of sale and purchase of building materials like Cement of all Brands (OPC Cement, PPC Cement, PSC Cement, ACC Cement, myCem Cement, Ambuja Cement and much more brands.), Bricks (Red bricks, Fly ash bricks and Interlocking bricks etc.), Cocrete, Gypsum Plaster, Construction sand, Metal Bars (TMT Bars, Steel bar and iron bar) and Blue metals and much more. </p>
+                  <p>Umeza Construction Pvt. Ltd. is also working in the field of sale and purchase of building materials like Cement of all Brands (OPC Cement, PPC Cement, PSC Cement, ACC Cement, myCem Cement, Ambuja Cement and much more brands.), Bricks (Red bricks, Fly ash bricks and Interlocking bricks etc.), Cocrete, Gypsum Plaster, Construction sand, Metal Bars (TMT Bars, Steel bar and iron bar) and Blue metals and much more. </p>
                </div>
             </div>
          </div>

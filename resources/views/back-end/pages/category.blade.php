@@ -3,6 +3,13 @@
 @section('content')
 <main id="main" class="main">
    <div class="pagetitle">
+      @if(session()->has("success"))
+         <div class="alert alert-success mt-2" role="alert">{{session("success")}}</div>
+      @endif
+
+      @if(session()->has("deleted"))
+         <div class="alert alert-danger mt-2" role="alert">{{session("deleted")}}</div>
+      @endif
       <h1>Category</h1>
       <nav>
          <ol class="breadcrumb">
@@ -10,8 +17,9 @@
             <li class="breadcrumb-item active">Category</li>
          </ol>
       </nav>
-      <div class="d-flex justify-content-end mb-3">
-         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal">Add Category</button>
+      <div class="d-flex justify-content-end mb-3"> 
+         <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal">Add Category</button> -->
+         <a type="button" href="{{url('get-update-category')}}" class="btn btn-primary">Add Category</a>
       </div>
    </div>
    <section class="section dashboard">
@@ -26,25 +34,23 @@
                            <thead>
                               <tr>
                                  <th scope="col">#</th>
-                                 <th scope="col">Customer</th>
-                                 <th scope="col">Product</th>
-                                 <th scope="col">Price</th>
-                                 <th scope="col">Status</th>
+                                 <th scope="col">Category Name</th>
+                                 <th scope="col">Date</th>
                                  <th scope="col">Action</th>
                               </tr>
                            </thead>
                            <tbody>
+                              @foreach($data as $key => $data)
                               <tr>
-                                 <th scope="row"><a href="#">#2457</a></th>
-                                 <td>Brandon Jacob</td>
-                                 <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                                 <td>$64</td>
-                                 <td><span class="badge bg-success">Approved</span></td>
+                                 <th scope="row">{{$key+1}}</th>
+                                 <td>{{$data->name}}</td>
+                                 <td>{{$data->created_at}}</td>
                                  <td>
-                                    <span class="badge rounded-pill bg-primary"><i class="bi bi-box-arrow-in-up-right"></i></span>
-                                    <span class="badge rounded-pill bg-danger"><i class="bi bi-x-square"></i><span>
+                                    <a href="{{url('get-update-category', [$data->id])}}"><span class="badge rounded-pill bg-primary"><i class="bi bi-box-arrow-in-up-right"></i></span></a>
+                                    <a href="{{route('backend.category_delete', [$data->id])}}"><span class="badge rounded-pill bg-danger"><i class="bi bi-x-square"></i><span></a>
                                  </td>
                               </tr>
+                              @endforeach
                            </tbody>
                         </table>
                      </div>

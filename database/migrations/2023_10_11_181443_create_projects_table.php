@@ -13,16 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30);
-            $table->string('designation', 50);
-            $table->string('branch', 50)->nullable();
-            $table->string('facebook', 100)->nullable();
-            $table->string('twitter', 100)->nullable();
-            $table->string('instagram', 100)->nullable();
-            $table->string('linkedin', 100)->nullable();
-            $table->string('image', 100);
+            $table->string('name', 100);
+            $table->string('description');
+            $table->string('client');
+            $table->string('architect');
+            $table->string('location');
+            $table->string('size');
+            $table->string('year');
+            $table->foreignId('category_id')->constrained();
+            $table->text('image');
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('projects');
     }
 };

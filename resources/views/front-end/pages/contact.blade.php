@@ -1,5 +1,5 @@
 @extends('front-master')
-@section('title', 'Contact Us | Umaiza Construction Pvt Ltd.')
+@section('title', 'Contact Us | Umeza Construction Pvt Ltd.')
 @section('content')
 <div id="banner-area" class="banner-area" style="background-image:url('{{ asset('storage/banner/banner3.jpg')}}')">
    <div class="banner-text">
@@ -45,8 +45,8 @@
                </span>
                <div class="ts-service-box-content">
                   <h4>Email Us</h4>
-                  <p>umaizaconstruction@gmail.com</p>
-                  <p>care@umaizaconstruction.com</p>
+                  <p>Umezaconstruction@gmail.com</p>
+                  <p>care@Umezaconstruction.com</p>
                </div>
             </div>
          </div>
@@ -85,8 +85,8 @@
                </span>
                <div class="ts-service-box-content">
                   <h4>Email Us</h4>
-                  <p>umaizaconstruction@gmail.com</p>
-                  <p>care@umaizaconstruction.com</p>
+                  <p>Umezaconstruction@gmail.com</p>
+                  <p>care@Umezaconstruction.com</p>
                </div>
             </div>
          </div>
@@ -125,8 +125,8 @@
                </span>
                <div class="ts-service-box-content">
                   <h4>Email Us</h4>
-                  <p>umaizaconstruction@gmail.com</p>
-                  <p>care@umaizaconstruction.com</p>
+                  <p>Umezaconstruction@gmail.com</p>
+                  <p>care@Umezaconstruction.com</p>
                </div>
             </div>
          </div>
@@ -145,7 +145,7 @@
       </div>
       <div class="gap-60"></div>
       <div class="map">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.047795014553!2d72.8741117!3d19.061636099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f66aba9739%3A0x76369bf52920b524!2sUmaiza%20Construction%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1694573072398!5m2!1sen!2sin" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.047795014553!2d72.8741117!3d19.061636099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f66aba9739%3A0x76369bf52920b524!2sUmeza%20Construction%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1694573072398!5m2!1sen!2sin" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="gap-40"></div>
       <div class="row">
