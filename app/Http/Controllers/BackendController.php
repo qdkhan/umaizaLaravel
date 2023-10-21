@@ -44,7 +44,6 @@ class BackendController extends Controller
                     $team->save();
                     return redirect()->to('team-list')->with('success', 'Team updated successfully.');
                 } else {
-                    // return $request->all();
                     $team = new Team();
                     $team->name         =   $request->name;
                     $team->designation  =   $request->designation;
@@ -141,7 +140,7 @@ class BackendController extends Controller
             DB::beginTransaction();
             $category = Category::destroy($id);
             if($category) {
-                $images = Project::where('category_id', $id)->pluck('image')->toArray();
+                $images = Project::where('category_id', $id)->value('image');
                 $project = Project::where('category_id', $id)->delete();
 
                 if($project) deleteFiles($images);
@@ -191,7 +190,7 @@ class BackendController extends Controller
                     'image.*.image' => 'The file must be an image.',
                     'image.*.dimensions' => 'The image dimensions must be 750x600 pixels.',
                     'image.*.mimes' => 'The image must be a file of type: jpg, png.',
-                    'image.*.max' => 'The image must not exceed 5MB in size.',
+                    'image.*.max' => 'The image must not exceed 1024kb in size.',
                 ];
                 $validate = Validator::make($request->all(), [
                     'name'          => 'required|min:5',
@@ -202,7 +201,7 @@ class BackendController extends Controller
                     'size'          => 'sometimes|nullable|numeric|min:1',
                     'year'          => 'sometimes|nullable|digits:4',
                     'categories'    => 'required|numeric',
-                    'image.*'       => 'image|dimensions:width=750,height=600|mimes:jpg,png|max:5120'
+                    'image.*'       => 'image|dimensions:width=750,height=600|mimes:jpg,png|max:1024'
                 ], $customMessages);
                 if($validate->fails()) 
                     return redirect()->back()->withErrors($validate)->withInput();
@@ -224,7 +223,6 @@ class BackendController extends Controller
                     $projects->save();
                     return redirect()->to('project-list')->with('success', 'Project updated successfully.');
                 } else {
-                    return $request->all();
                     $projects = new Project();
                     $projects->name         =   $request->name;
                     $projects->description  =   $request->description ?? 'N/A';

@@ -17,7 +17,6 @@
             <li class="breadcrumb-item active">Projects</li>
          </ol>
       </nav>
-      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal">Add Projects</button> -->
       <a type="button" class="btn btn-primary" href="{{url('get-update-project')}}">Add Projects</a>
    </div>
    <section class="section dashboard">
@@ -57,7 +56,16 @@
                                     <td>{{$data->size}}</td>
                                     <td>{{$data->year}}</td>
                                     <td>{{$data->category_name}}</td>
-                                    <td><img src={!! displayImage($data->image) !!} width="100px" height="100px" class="img-responsive rounded-circle"></td>
+                                    <td>
+                                       @if ($data->image)
+                                             @php
+                                                $images = explode(',', $data->image)
+                                             @endphp
+                                             @foreach ($images as $image)
+                                                   <img src={!! displayImage($image) !!} width="100px" height="100px" class="img-responsive rounded-circle">
+                                             @endforeach
+                                       @endif
+                                    </td>
                                     <td>{{$data->created_at}}</td>
                                     <td>
                                     <a href="{{url('get-update-project', [$data->id])}}"><span class="badge rounded-pill bg-primary"><i class="bi bi-box-arrow-in-up-right"></i></span></a>

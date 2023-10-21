@@ -26,19 +26,23 @@
                <ul>
                   <li><a href="{{ route('front.projects') }}" class="active" data-filter="*">Show All</a></li>
                   @foreach ($categories as $key => $value)
-                     <li><a style="pointer-events: all" href="{{route('front.projects', ['category_id' => $value->id])}}" data-filter={{$value->slug}}>{{$value->name}}</a></li>
+                     <li><a class="active" href="{{route('front.projects', ['category_id' => $value->id])}}" data-filter={{$value->slug}}>{{$value->name}}</a></li>
                   @endforeach
                </ul>
             </div>
          </div>
       </div>
-      <div id="isotope" class="isotope">
-      <!-- <div id="isotope" > -->
+      <!-- <div id="isotope" class="isotope"> -->
+      <div id="isotope" >
          @foreach($projects as $key => $value)
-            <div class="col-md-4 col-sm-6 col-xs-12 {{ $value->slug }} isotope-item">
+            @php
+               $images = explode(',', $value->image)
+            @endphp
+            @foreach($images as $image)
+               <div class="col-md-4 col-sm-6 col-xs-12 {{ $value->slug }} isotope-item">
                <div class="isotope-img-container">
-                  <a class="gallery-popup" href={!! displayImage($value->image) !!}>
-                  <img class="img-responsive" src={!! displayImage($value->image) !!} alt="">
+                  <a class="gallery-popup" href={!! displayImage($image) !!}>
+                  <img class="img-responsive" src={!! displayImage($image) !!} alt="">
                      <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                   </a>
                   <div class="project-item-info">
@@ -51,6 +55,7 @@
                   </div>
                </div>
             </div>
+            @endforeach
          @endforeach
       </div>
    </div>

@@ -97,16 +97,12 @@
                         <div class="col-sm-10">
                            <input class="form-control" accept=".jpg,.jpeg,.png" type="file" id="image" name="image[]" {{ !isset($data)  ? 'required' : ''}} multiple >
                            <small class="text-secondary"> Note: Image should not be greater than 1024 Kb and 750 px X 600 px</small>
-                           <!-- @error('image')
-                              <br/>
-                              <span class="text-danger">{{ $message }}</span>
-                           @enderror -->
                            @error('image.*')
-        <br/>
-        @foreach($errors->get('image.*') as $error)
-            <span class="text-danger">{{ $error[0] }}</span><br/>
-        @endforeach
-    @enderror
+                              <br/>
+                              @foreach($errors->get('image.*') as $error)
+                                    <span class="text-danger">{{ $error[0] }}</span><br/>
+                              @endforeach
+                           @enderror
                         </div>
                      </div>
                      <div class="text-center">
