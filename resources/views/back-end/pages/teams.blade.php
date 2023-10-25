@@ -28,7 +28,6 @@
                <div class="col-12">
                   <div class="card recent-sales overflow-auto">
                      <div class="card-body">
-                        <h5 class="card-title">Recent Sales <span>| Today</span></h5>
                         <table class="table table-borderless datatable">
                            <thead>
                               <tr>
@@ -36,11 +35,12 @@
                                  <th scope="col">Name</th>
                                  <th scope="col">Designation</th>
                                  <th scope="col">Branch</th>
-                                 <th scope="col">Facebook</th>
+                                 <!-- <th scope="col">Facebook</th>
                                  <th scope="col">Twitter</th>
                                  <th scope="col">Instagram</th>
-                                 <th scope="col">Linkedin</th>
+                                 <th scope="col">Linkedin</th> -->
                                  <th scope="col">Image</th>
+                                 <th scope="col">Date</th>
                                  <th scope="col">Action</th>
                               </tr>
                            </thead>
@@ -51,10 +51,10 @@
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->designation}}</td>
                                     <td>{{$data->branch}}</td>
-                                    <td>{{$data->facebook}}</td>
+                                    <!-- <td>{{$data->facebook}}</td>
                                     <td>{{$data->twitter}}</td>
                                     <td>{{$data->instagram}}</td>
-                                    <td>{{$data->linkedin}}</td>
+                                    <td>{{$data->linkedin}}</td> -->
                                     <td><img src={!! displayImage($data->image) !!} width="100px" height="100px" class="img-responsive rounded-circle"></td>
                                     <td>{{$data->created_at}}</td>
                                     <td>

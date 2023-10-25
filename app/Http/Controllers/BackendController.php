@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
 use App\Models\Project;
 use App\Models\Team;
+use App\Models\CustomerEnquiry;
 use Illuminate\Support\Facades\DB;
 
 class BackendController extends Controller
@@ -260,6 +261,29 @@ class BackendController extends Controller
             if($project) deleteFiles($image);
             DB::commit();
             return redirect()->to('project-list')->with('deleted', 'Project deleted successfully.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return $e->getMessage();
+        }
+    }
+
+    public function enquiryList() {
+        try{
+            $enquiries = CustomerEnquiry::all('id', 'name', 'email', 'mobile', 'subject', 'message', 'created_at');
+            return view('back-end.pages.enquiry', ['enquiries' => $enquiries]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function enquiryDelete($id) {
+        try{
+            DB::beginTransaction();
+            $enquiries = CustomerEnquiry::find($id)->delete();
+            if($enquiries) {
+                DB::commit();
+                return redirect()->back()->with('deleted', 'Enquiry deleted successfully.');
+            } 
         } catch (\Exception $e) {
             DB::rollBack();
             return $e->getMessage();

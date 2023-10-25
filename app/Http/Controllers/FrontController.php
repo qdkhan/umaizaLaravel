@@ -18,8 +18,8 @@ class FrontController extends Controller
     }
 
     public function company() {
-        $team = Team::select('*')->get();
-        return view('front-end.pages.company', ['team' => $team]);
+        $teams = Team::select('*')->get();
+        return view('front-end.pages.company', ['teams' => $teams]);
     }
 
     public function projects($category_id = null) {
@@ -32,6 +32,18 @@ class FrontController extends Controller
                             ->leftJoin('categories', 'categories.id', '=', 'projects.category_id')
                             ->get();
             return view('front-end.pages.projects', ['projects' => $data, 'categories' => $categories]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function projectsSingle($id) {
+        try{
+            $project = Project::select('projects.id', 'projects.name', 'projects.description', 'projects.client', 'projects.architect', 'projects.location', 'projects.size', 'projects.year', 'projects.category_id', 'projects.image', 'projects.created_at', 'categories.name as category_name', 'categories.slug')
+                            ->leftJoin('categories', 'categories.id', '=', 'projects.category_id')
+                            ->where('projects.id', $id)
+                            ->first();
+            return view('front-end.pages.single-project', ['project' => $project]);
         } catch (\Exception $e) {
             return $e->getMessage();
         }

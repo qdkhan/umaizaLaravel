@@ -45,8 +45,8 @@
                </span>
                <div class="ts-service-box-content">
                   <h4>Email Us</h4>
-                  <p>Umezaconstruction@gmail.com</p>
-                  <p>care@Umezaconstruction.com</p>
+                  <p>umaizaconstruction@gmail.com</p>
+                  <p>care@umaizaconstruction.com</p>
                </div>
             </div>
          </div>
@@ -85,8 +85,8 @@
                </span>
                <div class="ts-service-box-content">
                   <h4>Email Us</h4>
-                  <p>Umezaconstruction@gmail.com</p>
-                  <p>care@Umezaconstruction.com</p>
+                  <p>umaizaconstruction@gmail.com</p>
+                  <p>care@umaizaconstruction.com</p>
                </div>
             </div>
          </div>
@@ -125,8 +125,8 @@
                </span>
                <div class="ts-service-box-content">
                   <h4>Email Us</h4>
-                  <p>Umezaconstruction@gmail.com</p>
-                  <p>care@Umezaconstruction.com</p>
+                  <p>umaizaconstruction@gmail.com</p>
+                  <p>care@umaizaconstruction.com</p>
                </div>
             </div>
          </div>

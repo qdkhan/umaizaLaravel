@@ -20,6 +20,7 @@
 </div>
 <section id="main-container" class="main-container">
    <div class="container">
+      @if(isset($projects) && count($projects) > 0)
       <div class="row">
          <div class="col-md-12">
             <div class="isotope-nav" data-isotope-nav="isotope">
@@ -48,7 +49,7 @@
                   <div class="project-item-info">
                      <div class="project-item-info-content">
                         <h3 class="project-item-title">
-                        <a href="#">{{$value->name}}</a>
+                        <a href={{url('projects-single', ['id' => $value->id])}}>{{$value->name}}</a>
                         </h3>
                         <p class="project-cat">{{$value->category_name}}</p>
                      </div>
@@ -58,6 +59,9 @@
             @endforeach
          @endforeach
       </div>
+      @else
+         <h1>No project found</h1>
+      @endif
    </div>
 </section>
 @endsection
