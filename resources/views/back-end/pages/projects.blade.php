@@ -12,12 +12,14 @@
       @endif
       <h1>Projects</h1>
       <nav>
-         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Projects</li>
-         </ol>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Project</a></li>
+        </ol>
       </nav>
-      <a type="button" class="btn btn-primary" href="{{url('get-update-project')}}">Add Projects</a>
+      <div class="d-flex justify-content-end mb-3">
+         <a type="button" href="{{url('get-update-project')}}" class="btn btn-primary" >Add Project</a>
+      </div>
    </div>
    <section class="section dashboard">
       <div class="row">
@@ -25,17 +27,17 @@
             <div class="row">
                <div class="col-12">
                   <div class="card recent-sales overflow-auto">
-                     <div class="card-body">
-                        <table class="table table-borderless datatable">
+                     <div class="card-body mt-3">
+                        <table class="table table-borderless table-striped datatable">
                            <thead>
                               <tr>
                                  <th scope="col">#</th>
                                  <th scope="col">Name</th>
-                                 <th scope="col">Description</th>
-                                 <th scope="col">Client</th>
-                                 <th scope="col">Architect</th>
+                                 <!-- <th scope="col">Description</th>
+                                 <th scope="col">Client</th> -->
+                                 <!-- <th scope="col">Architect</th> -->
                                  <th scope="col">Location</th>
-                                 <th scope="col">Size</th>
+                                 <!-- <th scope="col">Size</th> -->
                                  <th scope="col">Year</th>
                                  <th scope="col">Category</th>
                                  <th scope="col">Image</th>
@@ -48,11 +50,11 @@
                                  <tr>
                                     <th scope="row">{{$key+1}}</th>
                                     <td>{{$data->name}}</td>
-                                    <td>{{$data->description}}</td>
-                                    <td>{{$data->client}}</td>
-                                    <td>{{$data->architect}}</td>
+                                    <!-- <td>{{$data->description}}</td>
+                                    <td>{{$data->client}}</td> -->
+                                    <!-- <td>{{$data->architect}}</td> -->
                                     <td>{{$data->location}}</td>
-                                    <td>{{$data->size}}</td>
+                                    <!-- <td>{{$data->size}}</td> -->
                                     <td>{{$data->year}}</td>
                                     <td>{{$data->category_name}}</td>
                                     <td>
@@ -67,8 +69,8 @@
                                     </td>
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                    <a href="{{url('get-update-project', [$data->id])}}"><span class="badge rounded-pill bg-primary"><i class="bi bi-box-arrow-in-up-right"></i></span></a>
-                                    <a href="{{route('backend.project_delete', [$data->id])}}"><span class="badge rounded-pill bg-danger"><i class="bi bi-x-square"></i><span></a>
+                                       <a href="{{url('get-update-project', [$data->id])}}"><span class="badge bg-primary"><i class="bi bi-box-arrow-in-up-right me-1"></i> Edit</span></a>
+                                       <a href="{{route('backend.project_delete', [$data->id])}}"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Delete<span></a>
                                     </td>
                                  </tr>
                               @endforeach

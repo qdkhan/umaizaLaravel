@@ -15,6 +15,12 @@ class BackendController extends Controller
     public function getUpdateTeam(Request $request) {
         try{
             if($request->isMethod('POST')){
+                $customMessages = [
+                    'image.image' => 'The file must be an image.',
+                    'image.dimensions' => 'The image dimensions must be 263x300 pixels.',
+                    'image.mimes' => 'The image must be a file of type: jpg, jpeg, png.',
+                    'image.max' => 'The image must not exceed 50kb in size.',
+                ];
                 $validate = Validator::make($request->all(), [
                     'name'          => 'required|min:4',
                     'designation'   => 'required|min:5',
@@ -23,7 +29,7 @@ class BackendController extends Controller
                     'twitter'       => 'sometimes|nullable|url',
                     'instagram'     => 'sometimes|nullable|url',
                     'linkedin'      => 'sometimes|nullable|url',
-                    'image'         => 'image|dimensions:width=263,height=300|mimes:jpg,png|max:50',
+                    'image'         => 'image|dimensions:width=263,height=300|mimes:jpg,jpeg,png|max:50',
                 ]);
                 if($validate->fails()) 
                     return redirect()->back()->withErrors($validate)->withInput();
@@ -190,7 +196,7 @@ class BackendController extends Controller
                 $customMessages = [
                     'image.*.image' => 'The file must be an image.',
                     'image.*.dimensions' => 'The image dimensions must be 750x600 pixels.',
-                    'image.*.mimes' => 'The image must be a file of type: jpg, png.',
+                    'image.*.mimes' => 'The image must be a file of type: jpg, jpeg, png.',
                     'image.*.max' => 'The image must not exceed 1024kb in size.',
                 ];
                 $validate = Validator::make($request->all(), [
@@ -202,7 +208,7 @@ class BackendController extends Controller
                     'size'          => 'sometimes|nullable|numeric|min:1',
                     'year'          => 'sometimes|nullable|digits:4',
                     'categories'    => 'required|numeric',
-                    'image.*'       => 'image|dimensions:width=750,height=600|mimes:jpg,png|max:1024'
+                    'image.*'       => 'image|dimensions:width=750,height=600|mimes:jpeg,jpg,png|max:1024'
                 ], $customMessages);
                 if($validate->fails()) 
                     return redirect()->back()->withErrors($validate)->withInput();
@@ -286,6 +292,24 @@ class BackendController extends Controller
             } 
         } catch (\Exception $e) {
             DB::rollBack();
+            return $e->getMessage();
+        }
+    }
+
+    public function dashboard() {
+        try{
+            $dashboardData['team']          =   Team::count();
+            $dashboardData['category']      =   Category::count();
+            $dashboardData['project']       =   Project::count();
+            $dashboardData['teams']         =   Team::select('name', 'designation', 'branch', 'image', 'created_at')->latest()->take(5)->get();
+            $dashboardData['categories']    =   Category::select('name', 'created_at')->latest()->take(5)->get();
+            $dashboardData['projects']      =   Project::select('projects.id', 'projects.name', 'projects.location', 'projects.category_id', 'projects.image', 'projects.created_at', 'categories.name as category_name')
+                                                ->leftJoin('categories', 'categories.id', '=', 'projects.category_id')
+                                                ->latest('projects.created_at')
+                                                ->take(5)
+                                                ->get();
+            return view('back-end.pages.dashboard', ['dashboardData' => $dashboardData]);
+        } catch (\Exception $e) {
             return $e->getMessage();
         }
     }

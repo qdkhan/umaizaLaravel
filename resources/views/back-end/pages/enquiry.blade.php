@@ -9,8 +9,8 @@
       <h1>Enquiries</h1>
       <nav>
          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-            <li class="breadcrumb-item active">Enquiries</li>
+            <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+            <li class="breadcrumb-item active"><a href="#">Enquiries</a></li>
          </ol>
       </nav>
    </div>
@@ -20,8 +20,8 @@
             <div class="row">
                <div class="col-12">
                   <div class="card recent-sales overflow-auto">
-                     <div class="card-body">
-                        <table class="table table-borderless datatable">
+                     <div class="card-body mt-3">
+                        <table class="table table-borderless table-striped datatable">
                            <thead>
                               <tr>
                                  <th scope="col">#</th>
@@ -45,7 +45,7 @@
                                     <td>{{$data->message}}</td>
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                       <a href="{{route('backend.enquiry_delete', [$data->id])}}"><span class="badge rounded-pill bg-danger"><i class="bi bi-x-square"></i><span></a>
+                                       <a href="{{route('backend.enquiry_delete', [$data->id])}}"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Delete<span></a>
                                     </td>
                                  </tr>
                               @endforeach

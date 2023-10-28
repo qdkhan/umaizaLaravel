@@ -1,14 +1,14 @@
 @extends('back-master')
-@section('title', 'UC | Enterprises')
+@section('title', 'UC | Dashboard')
 @section('content')
 <main id="main" class="main">
    <div class="pagetitle">
       <h1>Dashboard</h1>
       <nav>
-         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard</li>
-         </ol>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href={{url('dashboard')}}>Home</a></li>
+          <li class="breadcrumb-item"><a href={{url('dashboard')}}>Dashboard</a></li>
+        </ol>
       </nav>
    </div>
    <section class="section dashboard">
@@ -18,14 +18,17 @@
                <div class="col-xxl-4 col-md-6">
                   <div class="card info-card sales-card">
                      <div class="card-body">
-                        <h5 class="card-title">Sales <span>| Today</span></h5>
+                        <h5 class="card-title">Team <span>| </span></h5>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                              <i class="bi bi-cart"></i>
+                              <i class="bi bi-people"></i>
                            </div>
                            <div class="ps-3">
-                              <h6>145</h6>
-                              <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                              @if(isset($dashboardData['team']))
+                                 <h6>{{ $dashboardData['team'] }}</h6>
+                              @else
+                                 <h6>0</h6>
+                              @endif
                            </div>
                         </div>
                      </div>
@@ -34,14 +37,17 @@
                <div class="col-xxl-4 col-md-6">
                   <div class="card info-card revenue-card">
                      <div class="card-body">
-                        <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                        <h5 class="card-title">Category <span>| </span></h5>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                              <i class="bi bi-currency-dollar"></i>
+                              <i class="ri-building-2-line"></i>
                            </div>
                            <div class="ps-3">
-                              <h6>$3,264</h6>
-                              <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                              @if(isset($dashboardData['category']))
+                                 <h6>{{ $dashboardData['category'] }}</h6>
+                              @else
+                                 <h6>0</h6>
+                              @endif
                            </div>
                         </div>
                      </div>
@@ -50,72 +56,120 @@
                <div class="col-xxl-4 col-md-6">
                   <div class="card info-card customers-card">
                      <div class="card-body">
-                        <h5 class="card-title">Customers <span>| This Year</span></h5>
+                        <h5 class="card-title">Project <span>| </span></h5>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                              <i class="bi bi-people"></i>
+                              <i class="bi bi-shop"></i>
                            </div>
                            <div class="ps-3">
-                              <h6>1244</h6>
-                              <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                              @if(isset($dashboardData['project']))
+                                 <h6>{{ $dashboardData['project'] }}</h6>
+                              @else
+                                 <h6>0</h6>
+                              @endif
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-12">
-                  <div class="card recent-sales overflow-auto">
-                     <div class="card-body">
-                        <h5 class="card-title">Recent Sales <span>| Today</span></h5>
-                        <table class="table table-borderless datatable">
-                           <thead>
+               
+               <!-- Recently added Team (Only 5 will show here) -->
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Recently Added Team</h5>
+                     <table class="table table-hover">
+                        <thead>
+                           <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Image</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Designation</th>
+                              <th scope="col">Branch</th>
+                              <th scope="col">Date</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           @forelse($dashboardData['teams'] as $key => $team)
                               <tr>
-                                 <th scope="col">#</th>
-                                 <th scope="col">Customer</th>
-                                 <th scope="col">Product</th>
-                                 <th scope="col">Price</th>
-                                 <th scope="col">Status</th>
+                                 <th scope="row">{{$key+1}}</th>
+                                 <td><img src={!! displayImage($team->image) !!} width="100px" height="100px" class="img-responsive"></td>
+                                 <td>{{$team->name}}</td>
+                                 <td>{{$team->designation}}</td>
+                                 <td>{{$team->branch ? $team->branch : 'N/A'}}</td>
+                                 <td>{{$team->created_at}}</td>
                               </tr>
-                           </thead>
-                           <tbody>
+                              @empty
+                              <tr><td colspan="6">No team found.</td></tr>
+                           @endforelse
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+
+               <!-- Recently added Category (Only 5 will show here) -->
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Recently Added Category</h5>
+                     <table class="table table-hover">
+                        <thead>
+                           <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Name</th>
+                           <th scope="col">Date</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           @forelse($dashboardData['categories'] as $key => $value)
                               <tr>
-                                 <th scope="row"><a href="#">#2457</a></th>
-                                 <td>Brandon Jacob</td>
-                                 <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                                 <td>$64</td>
-                                 <td><span class="badge bg-success">Approved</span></td>
+                                 <th scope="row">{{$key+1}}</th>
+                                 <td>{{$value->name}}</td>
+                                 <td>{{$value->created_at}}</td>
                               </tr>
+                              @empty
+                              <tr><td colspan="3">No Category Found.</td></tr>
+                           @endforelse
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+
+               <!-- Recently added Project (Only 5 will show here) -->
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Recently Added Project</h5>
+                     <table class="table table-hover">
+                        <thead>
+                           <tr>
+                              <th scope="col">Images</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Category</th>
+                              <th scope="col">Location</th>
+                              <th scope="col">Date</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           @forelse($dashboardData['projects'] as $key => $project)
                               <tr>
-                                 <th scope="row"><a href="#">#2147</a></th>
-                                 <td>Bridie Kessler</td>
-                                 <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                                 <td>$47</td>
-                                 <td><span class="badge bg-warning">Pending</span></td>
+                                 <td>
+                                    @if ($project->image)
+                                          @php
+                                             $images = explode(',', $project->image)
+                                          @endphp
+                                          @foreach ($images as $image)
+                                                <img src={!! displayImage($image) !!} width="100px" height="100px" class="img-responsive">
+                                          @endforeach
+                                    @endif
+                                 </td>
+                                 <td>{{$project->name}}</td>
+                                 <td>{{$project->category_name}}</td>
+                                 <td>{{$project->location}}</td>
+                                 <td>{{$project->created_at}}</td>
                               </tr>
-                              <tr>
-                                 <th scope="row"><a href="#">#2049</a></th>
-                                 <td>Ashleigh Langosh</td>
-                                 <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                                 <td>$147</td>
-                                 <td><span class="badge bg-success">Approved</span></td>
-                              </tr>
-                              <tr>
-                                 <th scope="row"><a href="#">#2644</a></th>
-                                 <td>Angus Grady</td>
-                                 <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                                 <td>$67</td>
-                                 <td><span class="badge bg-danger">Rejected</span></td>
-                              </tr>
-                              <tr>
-                                 <th scope="row"><a href="#">#2644</a></th>
-                                 <td>Raheem Lehner</td>
-                                 <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                                 <td>$165</td>
-                                 <td><span class="badge bg-success">Approved</span></td>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </div>
+                              @empty
+                              <tr><td colspan="5">No Project Found.</td></tr>
+                           @endforelse
+                        </tbody>
+                     </table>
                   </div>
                </div>
             </div>

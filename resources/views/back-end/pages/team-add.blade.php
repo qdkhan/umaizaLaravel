@@ -2,19 +2,32 @@
 @section('title', 'UC | Team Page')
 @section('content')
 <main id="main" class="main">
+   <div class="pagetitle">
+      <h1>{{isset($data->id) ? 'Update' : 'Add'}} Team</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Team</a></li>
+        </ol>
+      </nav>
+      <div class="d-flex justify-content-end mb-3">
+         <a href="{{url('team-list')}}" class="btn btn-primary">Team List</a>
+      </div>
+   </div>
    <section class="section">
       <div class="row">
          <div class="col">
             <div class="card">
                <div class="card-body">
-                  <h5 class="card-title">Add Team</h5>
-                  <form class="row g-3" action="{{url('get-update-team')}}" method="POST" enctype="multipart/form-data">
+                  <h5 class="card-title"></h5>
+                  <form class="row g-3 needs-validation" action="{{url('get-update-team')}}" method="POST" enctype="multipart/form-data" novalidate>
                      @csrf
                      <div class="row mb-3">
                         <input type="text" class="form-control d-none" name="id" id="id" value={{$data->id ?? null}}>
                         <label for="name" class="col-sm-2 form-label">Name: <strong class="text-danger">*</strong></label>
                         <div class="col-sm-10">
                            <input type="text" class="form-control" id="name" name="name" value="{{old('name', $data->name ?? null)}}" placeholder="Name" required>
+                           <div class="invalid-feedback">Name field is required.</div>
                            @error('name')
                            <span class="text-danger">{{ $message }}</span>
                            @enderror
@@ -24,6 +37,7 @@
                         <label for="description" class="col-sm-2 form-label">Designation: <strong class="text-danger">*</strong></label>
                         <div class="col-sm-10">
                            <input type="text" class="form-control" id="designation" name="designation" value="{{old('designation', $data->designation ?? null)}}" placeholder="Designation" required>
+                           <div class="invalid-feedback">Designation field is required.</div>
                            @error('designation')
                            <span class="text-danger">{{ $message }}</span>
                            @enderror
@@ -67,7 +81,8 @@
                         </label>
                         <div class="col-sm-10">
                            <input class="form-control" accept=".jpg,.jpeg,.png" type="file" id="image" name="image" {{ !isset($data)  ? 'required' : ''}} >
-                           <small class="text-secondary"> Note: Image should not be greater than 50 Kb and 263 px X 300 px</small>
+                           <small class="text-secondary"> Note: Image should not be greater than 50 Kb and 263 px * 300 px</small>
+                           <div class="invalid-feedback">Image field is required.</div>
                            @error('image')
                               <br/>
                               <span class="text-danger">{{ $message }}</span>

@@ -12,10 +12,10 @@
       @endif
       <h1>Teams</h1>
       <nav>
-         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Teams</li>
-         </ol>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Team</a></li>
+        </ol>
       </nav>
       <div class="d-flex justify-content-end mb-3">
          <a type="button" href="{{url('get-update-team')}}" class="btn btn-primary" >Add Team</a>
@@ -27,8 +27,8 @@
             <div class="row">
                <div class="col-12">
                   <div class="card recent-sales overflow-auto">
-                     <div class="card-body">
-                        <table class="table table-borderless datatable">
+                     <div class="card-body mt-3">
+                        <table class="table table-borderless table-striped datatable">
                            <thead>
                               <tr>
                                  <th scope="col">#</th>
@@ -50,7 +50,7 @@
                                     <th scope="row">{{$key+1}}</th>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->designation}}</td>
-                                    <td>{{$data->branch}}</td>
+                                    <td>{{$data->branch ? $data->branch : 'N/A'}}</td>
                                     <!-- <td>{{$data->facebook}}</td>
                                     <td>{{$data->twitter}}</td>
                                     <td>{{$data->instagram}}</td>
@@ -58,8 +58,8 @@
                                     <td><img src={!! displayImage($data->image) !!} width="100px" height="100px" class="img-responsive rounded-circle"></td>
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                    <a href="{{url('get-update-team', [$data->id])}}"><span class="badge rounded-pill bg-primary"><i class="bi bi-box-arrow-in-up-right"></i></span></a>
-                                    <a href="{{route('backend.team_delete', [$data->id])}}"><span class="badge rounded-pill bg-danger"><i class="bi bi-x-square"></i><span></a>
+                                       <a href="{{url('get-update-team', [$data->id])}}"><span class="badge bg-success"><i class="bi bi-box-arrow-in-up-right me-1"></i> Edit</span></a>
+                                       <a href="{{route('backend.team_delete', [$data->id])}}"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Delete</span></a>
                                     </td>
                                  </tr>
                               @endforeach
