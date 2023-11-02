@@ -92,7 +92,7 @@
                            @forelse($dashboardData['teams'] as $key => $team)
                               <tr>
                                  <th scope="row">{{$key+1}}</th>
-                                 <td><img src={!! displayImage($team->image) !!} width="100px" height="100px" class="img-responsive"></td>
+                                 <td><img src={!! displayImage($team->image) !!} width="100px" height="100px" class="img-responsive" style="border-radius:5px"></td>
                                  <td>{{$team->name}}</td>
                                  <td>{{$team->designation}}</td>
                                  <td>{{$team->branch ? $team->branch : 'N/A'}}</td>
@@ -155,8 +155,8 @@
                                           @php
                                              $images = explode(',', $project->image)
                                           @endphp
-                                          @foreach ($images as $image)
-                                                <img src={!! displayImage($image) !!} width="100px" height="100px" class="img-responsive">
+                                          @foreach ($images as $index => $image)
+                                                <img src={!! displayImage($image) !!} width="50px" height="50px" style="border-radius:5px" class="img-responsive my-1">
                                           @endforeach
                                     @endif
                                  </td>

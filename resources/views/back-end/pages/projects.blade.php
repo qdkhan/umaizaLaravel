@@ -1,24 +1,33 @@
 @extends('back-master')
-@section('title', 'UC | Teams')
+@section('title', 'UC | Projects')
 @section('content')
 <main id="main" class="main">
-   <div class="pagetitle">
-      @if(session()->has("success"))
-         <div class="alert alert-success mt-2" role="alert">{{session("success")}}</div>
-      @endif
+   @if(session()->has("success"))
+      <div class="alert alert-success alert-dismissible fade show fw-bold mt-2" role="alert">
+         {{session("success")}}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" title="Close"></button>
+      </div>
+   @endif
 
-      @if(session()->has("deleted"))
-         <div class="alert alert-danger mt-2" role="alert">{{session("deleted")}}</div>
-      @endif
-      <h1>Projects</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Project</a></li>
-        </ol>
-      </nav>
-      <div class="d-flex justify-content-end mb-3">
-         <a type="button" href="{{url('get-update-project')}}" class="btn btn-primary" >Add Project</a>
+   @if(session()->has("deleted"))
+      <div class="alert alert-danger alert-dismissible fade show fw-bold mt-2" role="alert">
+         {{session("deleted")}}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" title="Close"></button>
+      </div>
+   @endif
+
+   <div class="row">
+      <div class="col">
+         <h1 class="fs-4 fw-bold">Projects</h1>
+         <nav>
+         <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Project</a></li>
+         </ol>
+         </nav>
+      </div>
+      <div class="col-auto align-self-end mb-3">
+         <a type="button" href="{{url('get-update-project')}}" class="btn btn-primary">Add Project</a>
       </div>
    </div>
    <section class="section dashboard">
@@ -31,7 +40,7 @@
                         <table class="table table-borderless table-striped datatable">
                            <thead>
                               <tr>
-                                 <th scope="col">#</th>
+                                 <th scope="col"># &nbsp;&nbsp;</th>
                                  <th scope="col">Name</th>
                                  <!-- <th scope="col">Description</th>
                                  <th scope="col">Client</th> -->
@@ -42,7 +51,7 @@
                                  <th scope="col">Category</th>
                                  <th scope="col">Image</th>
                                  <th scope="col">Date</th>
-                                 <th scope="col">Action</th>
+                                 <th scope="col" class="no-sort" width="170px">Action</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -55,22 +64,28 @@
                                     <!-- <td>{{$data->architect}}</td> -->
                                     <td>{{$data->location}}</td>
                                     <!-- <td>{{$data->size}}</td> -->
-                                    <td>{{$data->year}}</td>
+                                    <td>{{isset($data->year) ? $data->year : 'N/A'}}</td>
                                     <td>{{$data->category_name}}</td>
                                     <td>
-                                       @if ($data->image)
-                                             @php
-                                                $images = explode(',', $data->image)
-                                             @endphp
-                                             @foreach ($images as $image)
-                                                   <img src={!! displayImage($image) !!} width="100px" height="100px" class="img-responsive rounded-circle">
-                                             @endforeach
+                                       @if($data->image)
+                                          @php
+                                             $images = explode(',', $data->image)
+                                          @endphp
+                                          @foreach ($images as $image)
+                                                <img src={!! displayImage($image) !!} width="50px" height="50px" class="img-responsive rounded-circle">
+                                          @endforeach
                                        @endif
                                     </td>
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                       <a href="{{url('get-update-project', [$data->id])}}"><span class="badge bg-primary"><i class="bi bi-box-arrow-in-up-right me-1"></i> Edit</span></a>
-                                       <a href="{{route('backend.project_delete', [$data->id])}}"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Delete<span></a>
+                                       <a href="{{url('get-update-project', [$data->id])}}" class="btn btn-sm btn-primary my-1">
+                                          <i class="bi bi-box-arrow-in-up-right me-1"></i>
+                                          Edit
+                                       </a>
+                                       <a href="{{route('backend.project_delete', [$data->id])}}" class="btn btn-sm btn-danger">
+                                          <i class="bi bi-exclamation-octagon me-1"></i>
+                                          Delete
+                                       </a>
                                     </td>
                                  </tr>
                               @endforeach

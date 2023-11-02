@@ -2,17 +2,30 @@
 @section('title', 'UC | Enquiry')
 @section('content')
 <main id="main" class="main">
-   <div class="pagetitle">
-      @if(session()->has("deleted"))
-         <div class="alert alert-danger mt-2" role="alert">{{session("deleted")}}</div>
-      @endif
-      <h1>Enquiries</h1>
-      <nav>
-         <ol class="breadcrumb">
+   @if(session()->has("success"))
+      <div class="alert alert-success alert-dismissible fade show fw-bold mt-2" role="alert">
+         {{session("success")}}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" title="Close"></button>
+      </div>
+   @endif
+
+   @if(session()->has("deleted"))
+      <div class="alert alert-danger alert-dismissible fade show fw-bold mt-2" role="alert">
+         {{session("deleted")}}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" title="Close"></button>
+      </div>
+   @endif
+
+   <div class="row">
+      <div class="col">
+         <h1 class="fs-4 fw-bold">Projects</h1>
+         <nav>
+         <ol class="breadcrumb mb-3">
             <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
-            <li class="breadcrumb-item active"><a href="#">Enquiries</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Enquiry</a></li>
          </ol>
-      </nav>
+         </nav>
+      </div>
    </div>
    <section class="section dashboard">
       <div class="row">
@@ -31,7 +44,7 @@
                                  <th scope="col">Subject</th>
                                  <th scope="col">Message</th>
                                  <th scope="col">Date</th>
-                                 <th scope="col">Action</th>
+                                 <th scope="col" class="no-sort" width="120px">Action</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -45,7 +58,10 @@
                                     <td>{{$data->message}}</td>
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                       <a href="{{route('backend.enquiry_delete', [$data->id])}}"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Delete<span></a>
+                                       <a href="{{route('backend.enquiry_delete', [$data->id])}}" class="btn btn-sm btn-danger">
+                                          <i class="bi bi-exclamation-octagon me-1"></i>
+                                             Delete
+                                       </a>
                                     </td>
                                  </tr>
                               @endforeach

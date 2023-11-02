@@ -25,16 +25,16 @@
          <div class="col-md-12">
             <div class="isotope-nav" data-isotope-nav="isotope">
                <ul>
-                  <li><a href="#" class="active" data-filter="*">Show All</a></li>
+                  <li><a href="{{ route('front.projects') }}" class="active" data-filter="*">Show All</a></li>
                   @foreach ($categories as $key => $value)
-                     <li><a href="#" data-filter=".{{$value->slug}}">{{$value->name}}</a></li>
+                     <li><a class="active" href="{{route('front.projects', ['category_id' => $value->id])}}" data-filter={{$value->slug}}>{{$value->name}}</a></li>
                   @endforeach
                </ul>
             </div>
          </div>
       </div>
-      <div id="isotope" class="isotope">
-      <!-- <div id="isotope" > -->
+      <!-- <div id="isotope" class="isotope"> -->
+      <div id="isotope" >
          @foreach($projects as $key => $value)
             @php
                $images = explode(',', $value->image)
@@ -49,9 +49,9 @@
                   <div class="project-item-info">
                      <div class="project-item-info-content">
                         <h3 class="project-item-title">
-                           <a href={{url('projects-single', ['id' => $value->id])}}>{{$value->name}}</a>
+                        <a href={{url('projects-single', ['id' => $value->id])}}>{{$value->name}}</a>
                         </h3>
-                        <a class="project-cat" href={{url('projects-single', ['id' => $value->id])}}>{{$value->category_name}}</a>
+                        <p class="project-cat">{{$value->category_name}}</p>
                      </div>
                   </div>
                </div>

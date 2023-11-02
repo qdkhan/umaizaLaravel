@@ -33,7 +33,11 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::controller(AuthController::class)->group(function () {
+        Route::get('logout', 'logout')->name('logout');
+        Route::match(['GET','POST'],'get-update-profile/{id?}', 'getUpdateProfile');
+    });
+
     Route::controller(BackendController::class)->name('backend.')->group(function () {
         //Dashboard
         Route::get('/dashboard', 'dashboard');
@@ -61,6 +65,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::match(['GET', 'POST'], '/get-update-profile', function () {
             return view('back-end.pages.profile');
         });
+
+        //Project Document Upload
+        Route::get('/document-list', 'documentList');
+        Route::match(['GET', 'POST'], '/get-update-document/{id?}', 'getUpdateDocument');
+        Route::get('/document-delete/{id}', 'documentDelete')->name('document_delete');
     });
 });
 

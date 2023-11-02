@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Project;
 use App\Models\Team;
 use App\Models\CustomerEnquiry;
+use App\Models\Document;
 use Illuminate\Support\Facades\DB;
 
 class BackendController extends Controller
@@ -30,7 +31,7 @@ class BackendController extends Controller
                     'instagram'     => 'sometimes|nullable|url',
                     'linkedin'      => 'sometimes|nullable|url',
                     'image'         => 'image|dimensions:width=263,height=300|mimes:jpg,jpeg,png|max:50',
-                ]);
+                ], $customMessages);
                 if($validate->fails()) 
                     return redirect()->back()->withErrors($validate)->withInput();
                 if($request->hasFile('image')) { $file = uploadFiles($request, 'image', 'team'); }
@@ -310,6 +311,91 @@ class BackendController extends Controller
                                                 ->get();
             return view('back-end.pages.dashboard', ['dashboardData' => $dashboardData]);
         } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function documentList() {
+        try{
+            $documents = Document::all('id', 'name', 'client', 'location', 'year', 'document', 'document_type', 'created_at');
+            return view('back-end.pages.documents', ['data' => $documents]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function getUpdateDocument(Request $request) {
+        try{
+            if($request->isMethod('POST')){
+                $customMessages = [
+                    'document.mimes' => 'The file must be a ppt or pdf file.',
+                    'document.max' => 'The document must not exceed 5120kb in size.',
+                ];
+                $validate = Validator::make($request->all(), [
+                    'name'          => 'required|min:4',
+                    'client'        => 'required|min:5',
+                    'location'      => 'required|min:5',
+                    'year'          => 'required|digits:4',
+                    'document'      => 'mimes:pdf,ppt,pptx|max:5120',
+                ], $customMessages);
+                if($validate->fails()) 
+                    return redirect()->back()->withErrors($validate)->withInput();
+                
+                if($request->hasFile('document')) {
+                    $extension = $request->file('document')->extension();
+                    $file = uploadFiles($request, 'document', 'document'); 
+                }
+
+                if($request->id) {
+                    $document = Document::find($request->id);
+                        if(isset($file)) {
+                            deleteFiles($document->image);
+                            $document->document         =   $file;
+                            $document->document_type    =   $extension;
+                        } 
+                    $document->name             =   $request->name;
+                    $document->client           =   $request->client;
+                    $document->location         =   $request->location;
+                    $document->year             =   $request->year;
+                    $document->save();
+
+                    return redirect()->to('document-list')->with('success', 'Document updated successfully.');
+
+                } else {
+                    $document = new Document();
+                    $document->name             =   $request->name;
+                    $document->client           =   $request->client;
+                    $document->location         =   $request->location;
+                    $document->year             =   $request->year;
+                    $document->document         =   $file;
+                    $document->document_type    =   $extension;
+                    $document->save();
+                    return redirect()->to('document-list')->with('success', 'Document uploaded successfully.');
+                }  
+            } else {
+                if($request->id !== null) {
+                    $data = Document::select('id', 'name', 'client', 'location', 'year')->find($request->id);
+                    return view('back-end.pages.document-add', ['data' => $data]);
+                }else {
+                    return view('back-end.pages.document-add');
+                }
+            }
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function documentDelete($id) {
+        try {
+            DB::beginTransaction();
+            $image = Document::where('id', $id)->pluck('document')->toArray();
+            $document = Document::find($id)->delete();
+
+            if($document) deleteFiles($image);
+            DB::commit();
+            return redirect()->to('document-list')->with('deleted', 'Document deleted successfully.');
+        } catch (\Exception $e) {
+            DB::rollBack();
             return $e->getMessage();
         }
     }

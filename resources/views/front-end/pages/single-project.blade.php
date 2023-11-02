@@ -64,7 +64,7 @@
                </li>
                <li>
                   <div class="project-link">
-                     <a class="btn btn-primary" target={{url('projects')}} href="#">View All Project</a>
+                     <a class="btn btn-primary" href={{route('front.projects')}}>View All Project</a>
                   </div>
                </li>
             </ul>

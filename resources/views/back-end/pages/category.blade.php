@@ -1,24 +1,32 @@
 @extends('back-master')
-@section('title', 'UC | Teams')
+@section('title', 'UC | Category')
 @section('content')
 <main id="main" class="main">
-   <div class="pagetitle">
-      @if(session()->has("success"))
-         <div class="alert alert-success mt-2" role="alert">{{session("success")}}</div>
-      @endif
+   @if(session()->has("success"))
+      <div class="alert alert-success alert-dismissible fade show fw-bold mt-2" role="alert">
+         {{session("success")}}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" title="Close"></button>
+      </div>
+   @endif
 
-      @if(session()->has("deleted"))
-         <div class="alert alert-danger mt-2" role="alert">{{session("deleted")}}</div>
-      @endif
-      <h1>Category</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Team</a></li>
-        </ol>
-      </nav>
-      <div class="d-flex justify-content-end mb-3">
-         <a type="button" href="{{url('get-update-category')}}" class="btn btn-primary" >Add Category</a>
+   @if(session()->has("deleted"))
+      <div class="alert alert-danger alert-dismissible fade show fw-bold mt-2" role="alert">
+         {{session("deleted")}}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" title="Close"></button>
+      </div>
+   @endif
+   <div class="row">
+      <div class="col">
+         <h1 class="fs-4 fw-bold">Category</h1>
+         <nav>
+         <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Category</a></li>
+         </ol>
+         </nav>
+      </div>
+      <div class="col-auto align-self-end mb-3">
+         <a href="{{url('get-update-category')}}" class="btn btn-primary">Add Category</a>
       </div>
    </div>
    <section class="section dashboard">
@@ -34,7 +42,7 @@
                                  <th scope="col">#</th>
                                  <th scope="col">Category Name</th>
                                  <th scope="col">Date</th>
-                                 <th scope="col">Action</th>
+                                 <th scope="col" class="no-sort" width="170px">Action</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -44,8 +52,14 @@
                                  <td>{{$data->name}}</td>
                                  <td>{{$data->created_at}}</td>
                                  <td>
-                                    <a href="{{url('get-update-category', [$data->id])}}"><span class="badge bg-primary"><i class="bi bi-box-arrow-in-up-right me-1"></i> Edit</span></a>
-                                    <a href="{{route('backend.category_delete', [$data->id])}}"><span class="badge bg-danger"><i class="bi bi-exclamation-octagon me-1"></i> Delete<span></a>
+                                    <a href="{{url('get-update-category', [$data->id])}}" class="btn btn-sm btn-primary">
+                                       <i class="bi bi-box-arrow-in-up-right me-1"></i>
+                                          Edit
+                                    </a>
+                                    <a href="{{route('backend.category_delete', [$data->id])}}" class="btn btn-sm btn-danger">
+                                       <i class="bi bi-exclamation-octagon me-1"></i>
+                                          Delete
+                                    </a>
                                  </td>
                               </tr>
                               @endforeach

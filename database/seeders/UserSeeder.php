@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        DB::table('users')->updateOrinsert(['email' => 'qdkhan05@gmail.com'], ['name' => 'Qutbuddin Khan', 'password' => Hash::make('123456789')]);
+    {   
+        DB::table('users')->updateOrinsert(['email' => 'qdkhan05@gmail.com'], ['name' => 'Qutbuddin Khan', 'password' => Hash::make('123456789'), 'role' => 1, 'phone' => 9616279623, 'address' => 'Lucknow']);
     }
 }

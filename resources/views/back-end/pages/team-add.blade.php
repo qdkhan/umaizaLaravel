@@ -1,16 +1,18 @@
 @extends('back-master')
-@section('title', 'UC | Team Page')
+@section('title', 'UC | Team')
 @section('content')
 <main id="main" class="main">
-   <div class="pagetitle">
-      <h1>{{isset($data->id) ? 'Update' : 'Add'}} Team</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Team</a></li>
-        </ol>
-      </nav>
-      <div class="d-flex justify-content-end mb-3">
+   <div class="row">
+      <div class="col">
+         <h1 class="fs-4 fw-bold">{{isset($data->id) ? 'Update' : 'Add'}} Team</h1>
+         <nav>
+         <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Team</a></li>
+         </ol>
+         </nav>
+      </div>
+      <div class="col-auto align-self-end mb-3">
          <a href="{{url('team-list')}}" class="btn btn-primary">Team List</a>
       </div>
    </div>

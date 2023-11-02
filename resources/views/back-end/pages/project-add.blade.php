@@ -2,16 +2,18 @@
 @section('title', 'UC | Project Page')
 @section('content')
 <main id="main" class="main">
-   <div class="pagetitle">
-      <h1>{{isset($data->id) ? 'Update' : 'Add'}} Project</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Project</a></li>
-        </ol>
-      </nav>
-      <div class="d-flex justify-content-end mb-3">
-         <a href="{{url('project-list')}}" class="btn btn-primary">Project List</a>
+   <div class="row">
+      <div class="col">
+         <h1 class="fs-4 fw-bold">{{isset($data->id) ? 'Update' : 'Add'}} Project</h1>
+         <nav>
+         <ol class="breadcrumb mb-3">
+            <li class="breadcrumb-item"><a href="{{url('dashboard')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Project</a></li>
+         </ol>
+         </nav>
+      </div>
+      <div class="col-auto align-self-end mb-3">
+         <a type="button" href="{{url('project-list')}}" class="btn btn-primary">Project List</a>
       </div>
    </div>
    <section class="section">
@@ -111,7 +113,7 @@
                         </label>
                         <div class="col-sm-10">
                            <input class="form-control" accept=".jpg,.jpeg,.png" type="file" id="image" name="image[]" {{ !isset($data)  ? 'required' : ''}} multiple >
-                           <small class="text-secondary"> Note: Image should not be greater than 1024 Kb and 750 px * 600 px</small>
+                           <small class="text-secondary"> <strong class="text-danger">Note:</strong> Image should not be greater than 1024 Kb and 750 px * 600 px</small>
                            <div class="invalid-feedback">Image field is required.</div>
                            @error('image.*')
                               <br/>

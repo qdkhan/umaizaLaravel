@@ -39,7 +39,8 @@ h6 {
 #main {
   margin-top: 60px;
   padding: 20px 30px;
-  transition: all 0.3s;
+  transition: all 0.2s;
+  min-height: calc(100vh - 61.8px - 60px);
 }
 
 @media (max-width: 1199px) {
@@ -362,12 +363,6 @@ h6 {
   color: #4154f1;
   border-bottom: 2px solid #4154f1;
 }
-
-.sidebar-nav .nav-item.active a {
-  background-color: #f6f9ff;
-  color: #4154f1;
-}
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -718,14 +713,13 @@ h6 {
   color: #012970;
   background: #fff;
 }
-
 .sidebar-nav .nav-link.collapsed i {
   color: #899bbd;
 }
-
-.sidebar-nav .nav-link:hover {
-  color: #4154f1;
-  background: #f6f9ff;
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-item.active > a {
+  background-color: #012970;
+  color: #fff;
 }
 
 .sidebar-nav .nav-link:hover i {
@@ -756,6 +750,10 @@ h6 {
   transition: 0.3;
   padding: 10px 0 10px 40px;
   transition: 0.3s;
+  border-left: 3px solid transparent;
+}
+.sidebar-nav .nav-content li:not(:last-child) {
+  margin-bottom: 3px
 }
 
 .sidebar-nav .nav-content a i {
@@ -767,7 +765,10 @@ h6 {
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {
-  color: #4154f1;
+  color: #012970;
+  background-color: #d5def1;
+  border-radius: 0 4px 4px 0;
+  border-left: 3px solid #012970;
 }
 
 .sidebar-nav .nav-content a.active i {
@@ -1258,4 +1259,10 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+.no-sort, .no-sort .dataTable-sorter{pointer-events: none}
+.no-sort .dataTable-sorter::before,
+.no-sort .dataTable-sorter::after{
+  display: none;
 }

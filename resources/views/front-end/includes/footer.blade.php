@@ -41,7 +41,7 @@
          <div class="row">
             <div class="col-xs-12 col-sm-6">
                <div class="copyright-info">
-                  <span>Copyright Umaiza Construction Pvt Ltd. © <?=date('Y') ?> . Proudly Designed and Developed by <span title="(+91) 9616279623">QD Khan</span>
+                  <span>Copyright Umeza Construction Pvt Ltd. © <?=date('Y') ?> . Proudly Designed and Developed by <strong><span title="(+91) 9616279623">QD Khan</span></strong>
                   </span>
                </div>
             </div>
