@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->string('description');
-            $table->string('client');
-            $table->string('architect');
+            $table->string('description')->nullable();
+            $table->string('client')->nullable();
+            $table->string('architect')->nullable();
             $table->string('location');
-            $table->string('size');
-            $table->string('year');
+            $table->string('size')->nullable();
+            $table->string('year')->nullable();
             $table->foreignId('category_id')->constrained();
             $table->text('image');
             $table->softDeletes();

@@ -30,6 +30,9 @@ class AuthController extends Controller
             if (\Auth::attempt($credentials)) {
                 return redirect('dashboard');
             }
+
+            return redirect()->back()->with('error', 'Invalid credentials.');
+
         } catch (\Exception $e) {
             return redirect()->back()->with("error", $e->getMessage());
         }
@@ -39,7 +42,7 @@ class AuthController extends Controller
     {
         \Session::flush();
         \Auth::logout();
-        return redirect('login');
+        return redirect()->to('login')->with('success', 'Logout successfully.');
     }
 
     public function getUpdateProfile(Request $request) {
@@ -88,11 +91,36 @@ class AuthController extends Controller
                 $user->save();
 
                 DB::commit();
-                // return view('back-end.pages.get-update-profile');
                 return redirect()->back()->with('success', 'Profile updated successfully.');
             } else{
                 return view('back-end.pages.get-update-profile');
             }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function changePassword(Request $request) {
+        try {
+            $validate = Validator::make($request->all(), [
+                'current_password'  => 'required|min:9',
+                'password'          => 'required|min:9|confirmed'
+            ]);
+
+            if($validate->fails()) return redirect()->back()->withErrors($validate)->withInput();
+        
+            if(!Hash::check($request->current_password, \Auth::user()->password)){
+                return redirect()->back()->with("error", "Old Password Doesn't match!");
+            }
+
+            DB::beginTransaction();
+            User::whereId(\Auth::user()->id)->update([
+                'password' => Hash::make($request->password)
+            ]);
+
+            DB::commit();
+            return redirect('logout');
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->with('error', $e->getMessage());

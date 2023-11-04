@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::controller(AuthController::class)->group(function () {
         Route::get('logout', 'logout')->name('logout');
         Route::match(['GET','POST'],'get-update-profile/{id?}', 'getUpdateProfile');
+        Route::post('/change-password', 'changePassword');
     });
 
     Route::controller(BackendController::class)->name('backend.')->group(function () {

@@ -28,8 +28,8 @@
                         <input type="text" class="form-control d-none" name="id" id="id" value={{$data->id ?? null}}>
                         <label for="name" class="col-sm-2 form-label">Project Name: <strong class="text-danger">*</strong></label>
                         <div class="col-sm-10">
-                           <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $data->name ?? null)}}" placeholder="Category name" required>
-                           <div class="invalid-feedback">Name field is required.</div>
+                           <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $data->name ?? null)}}" placeholder="Project name" required>
+                           <div class="invalid-feedback">Project name field is required.</div>
                            @error('name')
                               <span class="text-danger">{{ $message }}</span>
                            @enderror
@@ -39,7 +39,7 @@
                         <label for="client" class="col-sm-2 form-label">Client: <strong class="text-danger">*</strong></label>
                         <div class="col-sm-10">
                            <input type="text" class="form-control" id="client" name="client" value="{{old('client', $data->client ?? null)}}" placeholder="Client name" required>
-                           <div class="invalid-feedback">Client field is required.</div>
+                           <div class="invalid-feedback">Client name field is required.</div>
                            @error('client')
                               <span class="text-danger">{{ $message }}</span>
                            @enderror
@@ -48,8 +48,8 @@
                     <div class="row mb-3">
                         <label for="location" class="col-sm-2 form-label">Location: <strong class="text-danger">*</strong></label>
                         <div class="col-sm-10">
-                           <input type="text" class="form-control" id="location" name="location" value="{{old('location', $data->location ?? null)}}" placeholder="Project location" required>
-                           <div class="invalid-feedback">Location field is required.</div>
+                           <input type="text" class="form-control" id="location" name="location" minlength="5" value="{{old('location', $data->location ?? null)}}" placeholder="Project location" required>
+                           <div class="invalid-feedback">Project name should be minimum 5 character.</div>
                            @error('location')
                               <span class="text-danger">{{ $message }}</span>
                            @enderror
@@ -58,10 +58,10 @@
                     <div class="row mb-3">
                         <label for="year" class="col-sm-2 form-label">Year : <strong class="text-danger">*</strong></label>
                         <div class="col-sm-10">
-                           <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="4" class="form-control" id="year" name="year" value="{{old('year', $data->year ?? null)}}" placeholder="Year completed" required>
-                           <div class="invalid-feedback">Year field is required.</div>
+                           <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="4" minlength="4" class="form-control" id="year" name="year" value="{{old('year', $data->year ?? null)}}" placeholder="Year completed" required>
+                           <div class="invalid-feedback">Year should be only 4 digits numeric character.</div>
                            @error('year')
-                           <span class="text-danger">{{ $message }}</span>
+                              <span class="text-danger">{{ $message }}</span>
                            @enderror
                         </div>
                      </div>

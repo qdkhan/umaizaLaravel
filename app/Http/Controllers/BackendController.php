@@ -23,7 +23,7 @@ class BackendController extends Controller
                     'image.max' => 'The image must not exceed 50kb in size.',
                 ];
                 $validate = Validator::make($request->all(), [
-                    'name'          => 'required|min:4',
+                    'name'          => 'required|min:5',
                     'designation'   => 'required|min:5',
                     'branch'        => 'sometimes|nullable|min:5',
                     'facebook'      => 'sometimes|nullable|url',
@@ -45,10 +45,10 @@ class BackendController extends Controller
                     $team->name         =   $request->name;
                     $team->designation  =   $request->designation;
                     $team->branch       =   $request->branch ?? '';
-                    $team->facebook     =   $request->facebook ?? 'https://www.facebook.com/umaizaconstruction?mibextid=ZbWKwL';
-                    $team->twitter      =   $request->twitter ?? 'https://twitter.com/UCPLSERVICES';
-                    $team->instagram    =   $request->instagram ?? 'https://www.instagram.com/UMAIZA_CONSTRUCTION_PVT_LTD';
-                    $team->linkedin     =   $request->linkedin ?? 'https://www.linkedin.com/in/umaizaconstruction/';
+                    $team->facebook     =   $request->facebook ?? '';
+                    $team->twitter      =   $request->twitter ?? '';
+                    $team->instagram    =   $request->instagram ?? '';
+                    $team->linkedin     =   $request->linkedin ?? '';
                     $team->save();
                     return redirect()->to('team-list')->with('success', 'Team updated successfully.');
                 } else {
@@ -56,10 +56,10 @@ class BackendController extends Controller
                     $team->name         =   $request->name;
                     $team->designation  =   $request->designation;
                     $team->branch       =   $request->branch ?? '';
-                    $team->facebook     =   $request->facebook ?? 'https://www.facebook.com/umaizaconstruction?mibextid=ZbWKwL';
-                    $team->twitter      =   $request->twitter ?? 'https://twitter.com/UCPLSERVICES';
-                    $team->instagram    =   $request->instagram ?? 'https://www.instagram.com/UMAIZA_CONSTRUCTION_PVT_LTD';
-                    $team->linkedin     =   $request->linkedin ?? 'https://www.linkedin.com/in/umaizaconstruction/';
+                    $team->facebook     =   $request->facebook ?? '';
+                    $team->twitter      =   $request->twitter ?? '';
+                    $team->instagram    =   $request->instagram ?? '';
+                    $team->linkedin     =   $request->linkedin ?? '';
                     $team->image        =   $file;
                     $team->save();
                     return redirect()->to('team-list')->with('success', 'Team added successfully.');
@@ -106,7 +106,7 @@ class BackendController extends Controller
             if($request->isMethod('POST')) {
                 if($request->id) {
                     $validate = Validator::make($request->all(), [
-                        'name' => 'required|min:5|unique:categories,name,'.$request->id,
+                        'name' => 'required|min:5|unique:categories,name,'.$request->id.',id,deleted_at,NULL',
                         'id'   => 'required'
                     ]);
                     if($validate->fails()) 
@@ -118,7 +118,7 @@ class BackendController extends Controller
                     return redirect()->to('category-list')->with('success', 'Category Updated successfully.');
                 } else{
                     $validate = Validator::make($request->all(), [
-                        'name' => 'required|unique:categories,name|min:5',
+                        'name' => 'required|min:5|unique:categories,name,NULL,id,deleted_at,NULL',
                     ]);
                     if($validate->fails()) 
                         return redirect()->back()->withErrors($validate)->withInput();
@@ -206,7 +206,7 @@ class BackendController extends Controller
                     'client'        => 'sometimes|nullable|min:5',
                     'architect'     => 'sometimes|nullable|min:5',
                     'location'      => 'required|min:5',
-                    'size'          => 'sometimes|nullable|numeric|min:1',
+                    'size'          => 'sometimes|nullable|numeric|min:3',
                     'year'          => 'sometimes|nullable|digits:4',
                     'categories'    => 'required|numeric',
                     'image.*'       => 'image|dimensions:width=750,height=600|mimes:jpeg,jpg,png|max:1024'
@@ -332,7 +332,7 @@ class BackendController extends Controller
                     'document.max' => 'The document must not exceed 5120kb in size.',
                 ];
                 $validate = Validator::make($request->all(), [
-                    'name'          => 'required|min:4',
+                    'name'          => 'required|min:5',
                     'client'        => 'required|min:5',
                     'location'      => 'required|min:5',
                     'year'          => 'required|digits:4',

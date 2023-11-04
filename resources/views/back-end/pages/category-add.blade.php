@@ -28,8 +28,8 @@
                         <input type="text" class="form-control d-none" name="id" id="id" value={{$data->id ?? null}}>
                         <label for="name" class="col-sm-2 form-label">Category Name: <strong class="text-danger">*</strong></label>
                         <div class="col-sm-10">
-                           <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $data->name ?? null)}}" placeholder="Category name" required>
-                           <div class="invalid-feedback">Name field is required.</div>
+                           <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $data->name ?? null)}}" minlength="5" placeholder="Category name" required>
+                           <div class="invalid-feedback">Category name should be minimum 5 character.</div>
                            @error('name')
                               <span class="text-danger">{{ $message }}</span>
                            @enderror

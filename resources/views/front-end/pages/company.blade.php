@@ -86,25 +86,25 @@
                   </p>
                   @endif
                   <div class="team-social-icons">
-                     <a title="Facebook" href={{$team->facebook}} target="_blank">
-                     <span class="social-icon">
-                     <i class="fa fa-facebook"></i>
-                     </span>
+                     <a title="Facebook" href="{{$team->facebook ? $team->facebook : 'https://www.facebook.com/umaizaconstruction?mibextid=ZbWKwL'}}" target="_blank">
+                        <span class="social-icon">
+                           <i class="fa fa-facebook"></i>
+                        </span>
                      </a>
-                     <a title="Twitter" href={{$team->twitter}} target="_blank">
-                     <span class="social-icon">
-                     <i class="fa fa-twitter" target="_blank"></i>
-                     </span>
+                     <a title="Twitter" href="{{$team->twitter ? $team->twitter : 'https://twitter.com/UCPLSERVICES'}}" target="_blank">
+                        <span class="social-icon">
+                           <i class="fa fa-twitter" target="_blank"></i>
+                        </span>
                      </a>
-                     <a title="Instagram" href={{$team->instagram}} target="_blank">
-                     <span class="social-icon">
-                     <i class="fa fa-instagram" target="_blank"></i>
-                     </span>
+                     <a title="Instagram" href="{{$team->instagram ? $team->instagram : 'https://www.instagram.com/UMAIZA_CONSTRUCTION_PVT_LTD'}}" target="_blank">
+                        <span class="social-icon">
+                           <i class="fa fa-instagram" target="_blank"></i>
+                        </span>
                      </a>
-                     <a title="Linkedin" href={{$team->linkedin}} target="_blank">
-                     <span class="social-icon">
-                     <i class="fa fa-linkedin" target="_blank"></i>
-                     </span>
+                     <a title="Linkedin" href="{{$team->linkedin ? $team->linkedin : 'https://www.linkedin.com/in/umaizaconstruction/'}}" target="_blank">
+                        <span class="social-icon">
+                           <i class="fa fa-linkedin" target="_blank"></i>
+                        </span>
                      </a>
                   </div>
                </div>
