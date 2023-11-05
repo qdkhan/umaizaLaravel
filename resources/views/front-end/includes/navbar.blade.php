@@ -33,7 +33,12 @@
                      <li class="dropdown">
                         <a href="{{route('front.news')}}" >News </a>
                      </li>
-                     <li><a href="{{route('front.contact')}}">Contact</a></li>
+                     <li>
+                        <a href="{{route('front.contact')}}">Contact</a>
+                     </li>
+                     <li>
+                        <a href="{{route('login')}}" class="btn btn-primary">Login</a>
+                     </li>
                   </ul>
                </div>
             </div>

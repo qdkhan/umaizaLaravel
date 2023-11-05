@@ -5,7 +5,7 @@
             <ul class="top-info">
                <li>
                   <i class="fa fa-map-marker">&nbsp;</i>
-                  <p class="info-text">297-B, Behind Takiya Ward Masjid, Kurla West Mumbai 400070</p>
+                  <p class="info-text">Khurram Nagar Lucknow, Kurla Mumbai, Bahraich</p>
                   
                </li>
             </ul>

@@ -160,8 +160,8 @@
                <div class="row">
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="name">Name</label>
-                        <input class="form-control form-control-name" name="name" id="name" placeholder="Enter your name" type="text" required>
+                        <label for="name">Name: <strong class="text-danger">*</strong></label>
+                        <input class="form-control form-control-name" name="name" id="name" value="{{old('name')}}" placeholder="Enter your name" type="text" required>
                      </div>
                      @error('name')
                         <span class="text-danger">{{ $message }}</span>
@@ -169,8 +169,8 @@
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control form-control-email" name="email" id="email" 
+                        <label for="email">Email: <strong class="text-danger">*</strong></label>
+                        <input type="email" class="form-control form-control-email" value="{{old('email')}}" name="email" id="email" 
                            placeholder="Enter your email" required>
                      </div>
                      @error('email')
@@ -179,9 +179,10 @@
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="mobile">Mobile/Phone No.</label>
+                     <!-- onkeypress="return event.charCode >= 48 && event.charCode <= 57" -->
+                        <label for="mobile">Mobile/Phone No.: <strong class="text-danger">*</strong></label>
                         <input class="form-control form-control-mobile" name="mobile" id="mobile" 
-                           placeholder="Enter your mobile no." min="0" step="1" type="number" required>
+                           placeholder="Enter your mobile no." oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "12" min="0" step="1" value="{{old('mobile')}}" type="number" required>
                      </div>
                      @error('mobile')
                         <span class="text-danger">{{ $message }}</span>
@@ -197,7 +198,7 @@
                </div>
                <div class="form-group">
                   <label for="message" >Message</label>
-                  <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10"></textarea>
+                  <textarea class="form-control form-control-message" name="message" id="message" placeholder="Enter your message" rows="10"></textarea>
                </div>
                <div class="text-right"><br>
                   <button class="btn btn-primary solid blank" type="submit">Send Message</button> 

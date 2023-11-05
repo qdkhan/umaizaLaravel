@@ -14,7 +14,14 @@ use Illuminate\Support\Facades\Validator;
 class FrontController extends Controller
 {
     public function index() {
-        return view('front-end.pages.index');
+        try{
+            $data = Project::latest()->take(1)->value('image');
+            $images = explode(',', $data);
+            return view('front-end.pages.index', compact('images'));
+        } catch(\Exception $e){
+            return $e->getMessage();
+        }
+        
     }
 
     public function company() {
@@ -66,7 +73,7 @@ class FrontController extends Controller
             $validate = Validator::make($request->all(), [
                 'name'      => 'required|min:3',
                 'email'     => 'required|email|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-                'mobile'    => 'required|digits_between:10,15',
+                'mobile'    => 'required|digits_between:10,12',
             ]);
 
             if($validate->fails()){

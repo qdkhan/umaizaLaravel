@@ -30,9 +30,7 @@ class AuthController extends Controller
             if (\Auth::attempt($credentials)) {
                 return redirect('dashboard');
             }
-
             return redirect()->back()->with('error', 'Invalid credentials.');
-
         } catch (\Exception $e) {
             return redirect()->back()->with("error", $e->getMessage());
         }

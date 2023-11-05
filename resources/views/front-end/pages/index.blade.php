@@ -313,32 +313,32 @@
             <div class="row all-clients">
                <div class="col-sm-2">
                   <figure class="clients-logo">
-                     <a href="#"><img class="img-responsive" src="{{asset('storage/clients/client1.png')}}" alt="" /></a>
+                     <a href="javascript:void(0)"><img class="img-responsive" src="{{asset('storage/clients/client1.png')}}" alt="" /></a>
                   </figure>
                </div>
                <div class="col-sm-2">
                   <figure class="clients-logo">
-                     <a href="#"><img class="img-responsive" src="{{asset('storage/clients/client2.png')}}" alt="" /></a>
+                     <a href="javascript:void(0)"><img class="img-responsive" src="{{asset('storage/clients/client2.png')}}" alt="" /></a>
                   </figure>
                </div>
                <div class="col-sm-2">
                   <figure class="clients-logo">
-                     <a href="#"><img class="img-responsive" src="{{asset('storage/clients/client3.png')}}" alt="" /></a>
+                     <a href="javascript:void(0)"><img class="img-responsive" src="{{asset('storage/clients/client3.png')}}" alt="" /></a>
                   </figure>
                </div>
                <div class="col-sm-2">
                   <figure class="clients-logo">
-                     <a href="#"><img class="img-responsive" src="{{asset('storage/clients/client4.png')}}" alt="" /></a>
+                     <a href="javascript:void(0)"><img class="img-responsive" src="{{asset('storage/clients/client4.png')}}" alt="" /></a>
                   </figure>
                </div>
                <div class="col-sm-2">
                   <figure class="clients-logo">
-                     <a href="#"><img class="img-responsive" src="{{asset('storage/clients/client5.png')}}" alt="" /></a>
+                     <a href="javascript:void(0)"><img class="img-responsive" src="{{asset('storage/clients/client5.png')}}" alt="" /></a>
                   </figure>
                </div>
                <div class="col-sm-2">
                   <figure class="clients-logo">
-                     <a href="#"><img class="img-responsive" src="{{asset('storage/clients/client6.png')}}" alt="" /></a>
+                     <a href="javascript:void(0)"><img class="img-responsive" src="{{asset('storage/clients/client6.png')}}" alt="" /></a>
                   </figure>
                </div>
             </div>
@@ -358,8 +358,8 @@
          <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="ts-newsletter">
                <div class="newsletter-introtext">
-                  <h4><a href="#">Office:- (+91) 831 836 1961, (+91) 739 894 6970</a></h4>
-                  <p>Umezaconstruction@gmail.com</p>
+                  <h4><a href="javascript:void(0)">Office:- (+91) 831 836 1961, (+91) 739 894 6970</a></h4>
+                  <p>umaizaconstruction@gmail.com</p>
                </div>
             </div>
          </div>
@@ -373,54 +373,27 @@
          <h3 class="section-sub-title">Recent Projects</h3>
       </div>
       <div class="row">
-         <div class="col-md-4 col-xs-12">
-            <div class="latest-post">
-               <div class="latest-post-media">
-                  <a href="{{ route('front.projects')}}" class="latest-post-img">
-                  <img class="img-responsive" src="{{asset('storage/news/news1.jpg')}}" alt="img">
-                  </a>
-               </div>
-               <div class="post-body">
-                  <div class="latest-post-meta">
-                     <span class="post-item-date">
-                     <i class="fa fa-clock-o"></i> July 20, 2017
-                     </span>
+         @foreach($images as $key => $image)
+            <div class="col-md-4 col-xs-12">
+               <div class="latest-post">
+                  <div class="latest-post-media">
+                     <a href="{{ route('front.projects')}}" class="latest-post-img">
+                     <img class="img-responsive" src="{!! displayImage($image) !!}" alt="img">
+                     </a>
+                  </div>
+                  <div class="post-body">
+                     <div class="latest-post-meta">
+                        <span class="post-item-date">
+                        <i class="fa fa-clock-o"></i> July 20, 2017
+                        </span>
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
-         <div class="col-md-4 col-xs-12">
-            <div class="latest-post">
-               <div class="latest-post-media">
-                  <a href="{{ route('front.projects') }}" class="latest-post-img">
-                  <img class="img-responsive" src="{{asset('storage/news/news2.jpg')}}" alt="img">
-                  </a>
-               </div>
-               <div class="post-body">
-                  <div class="latest-post-meta">
-                     <span class="post-item-date">
-                     <i class="fa fa-clock-o"></i> June 17, 2017
-                     </span>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-xs-12">
-            <div class="latest-post">
-               <div class="latest-post-media">
-                  <a href="{{ route('front.projects') }}" class="latest-post-img">
-                  <img class="img-responsive" src="{{asset('storage/news/news3.jpg')}}" alt="img">
-                  </a>
-               </div>
-               <div class="post-body">
-                  <div class="latest-post-meta">
-                     <span class="post-item-date">
-                     <i class="fa fa-clock-o"></i> Aug 13, 2020
-                     </span>
-                  </div>
-               </div>
-            </div>
-         </div>
+            @if ($key == 2)
+               @break
+            @endif
+         @endforeach
       </div>
       <div class="general-btn text-center">
          <a class="btn btn-primary" href="{{ route('front.projects') }}">See All Projects</a>

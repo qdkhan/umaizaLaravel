@@ -29,7 +29,6 @@ Route::group(['middleware' => 'guest'], function () {
             // exec('composer dump-autoload');
         });
     });
-
 });
 
 Route::group(['middleware' => 'auth'], function () {
