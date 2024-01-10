@@ -1,7 +1,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
    <div class="d-flex align-items-center justify-content-between">
       <a href="javascript:void(0)" class="logo d-flex align-items-center">
-      <img src="{{ asset('storage/logo.jpg') }}" alt="">
+      <img src="{{ asset('storage/Oldlogo.jpg') }}" alt="">
       <span class="d-none d-lg-block">Umeza Construction</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -13,7 +13,7 @@
             <i class="bi bi-search"></i>
             </a>
          </li>
-         <li class="nav-item dropdown">
+         <!-- <li class="nav-item dropdown">
             <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i class="bi bi-chat-left-text"></i>
             <span class="badge bg-success badge-number">3</span>
@@ -69,7 +69,7 @@
                   <a href="#">Show all messages</a>
                </li>
             </ul>
-         </li>
+         </li> -->
          <li class="nav-item dropdown pe-3">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="{!! displayImage(Auth::user()->image) !!}" alt="Profile" class="rounded-circle" style="width:36px;height:36px">

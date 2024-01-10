@@ -4,11 +4,11 @@
          <div class="navbar-header">
             <div class="logo">
                <a href="/">
-               <img src="{{asset('storage/logo.jpg')}}" alt="logo" style="width:80px;height:80px;">
+               <img src="{{asset('storage/black.png')}}" alt="logo" style="width:80px;height:80px;border-radius:50%">
                </a>
             </div>
          </div>
-         <nav class="site-navigation navigation pull-right" style="padding-top:20px;">
+         <nav class="site-navigation navigation pull-right" style="padding-top:28px;">
             <div class="site-nav-inner">
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                <span class="sr-only">Toggle navigation</span>
@@ -17,7 +17,7 @@
                <span class="icon-bar"></span>
                </button>
                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                  <ul class="nav navbar-nav">
+                  <ul class="nav navbar-nav header-bar">
                      <li class="dropdown">
                         <a href="{{url('/')}}" >Home </a>
                      </li>

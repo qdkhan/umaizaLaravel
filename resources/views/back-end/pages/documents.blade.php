@@ -69,13 +69,11 @@
                                     </td>
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                        <a href="{{url('get-update-document', [$data->id])}}" class="btn btn-sm btn-primary">
-                                          <i class="bi bi-box-arrow-in-up-right me-1"></i>
-                                          Edit
+                                       <a href="{{url('get-update-document', [$data->id])}}" >
+                                          <i class="bi bi-pencil-square fs-5 me-1"></i>
                                        </a>
-                                       <a href="{{route('backend.document_delete', [$data->id])}}" class="btn btn-sm btn-danger">
-                                          <i class="bi bi-exclamation-octagon me-1"></i>
-                                          Delete
+                                       <a href="{{route('backend.document_delete', [$data->id])}}">
+                                          <i class="bi bi-trash-fill text-danger fs-5 me-1"></i>
                                        </a>
                                     </td>
                                  </tr>

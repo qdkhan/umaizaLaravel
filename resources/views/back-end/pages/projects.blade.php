@@ -40,51 +40,42 @@
                         <table class="table table-borderless table-striped datatable">
                            <thead>
                               <tr>
-                                 <th scope="col"># &nbsp;&nbsp;</th>
+                                 <th scope="col">#</th>
+                                 <th scope="col">Image</th>
                                  <th scope="col">Name</th>
-                                 <!-- <th scope="col">Description</th>
-                                 <th scope="col">Client</th> -->
-                                 <!-- <th scope="col">Architect</th> -->
                                  <th scope="col">Location</th>
-                                 <!-- <th scope="col">Size</th> -->
                                  <th scope="col">Year</th>
                                  <th scope="col">Category</th>
-                                 <th scope="col">Image</th>
                                  <th scope="col">Date</th>
-                                 <th scope="col" class="no-sort" width="170px">Action</th>
+                                 <th scope="col" class="no-sort" width="100px">Action</th>
                               </tr>
                            </thead>
                            <tbody>
                               @foreach($data as $key => $data)
                                  <tr>
                                     <th scope="row">{{$key+1}}</th>
-                                    <td>{{$data->name}}</td>
-                                    <!-- <td>{{$data->description}}</td>
-                                    <td>{{$data->client}}</td> -->
-                                    <!-- <td>{{$data->architect}}</td> -->
-                                    <td>{{$data->location}}</td>
-                                    <!-- <td>{{$data->size}}</td> -->
-                                    <td>{{isset($data->year) ? $data->year : 'N/A'}}</td>
-                                    <td>{{$data->category_name}}</td>
                                     <td>
                                        @if($data->image)
                                           @php
                                              $images = explode(',', $data->image)
                                           @endphp
                                           @foreach ($images as $image)
-                                                <img src={!! displayImage($image) !!} width="50px" height="50px" class="img-responsive rounded-circle">
+                                                <img src={!! displayImage($image) !!} width="50px" height="50px" style="border-radius:5px" class="img-responsive my-1">
                                           @endforeach
                                        @endif
                                     </td>
+                                    <td>{{$data->name}}</td>
+                                    <td>{{$data->location}}</td>
+                                    <td>{{isset($data->year) ? $data->year : 'N/A'}}</td>
+                                    <td>{{$data->category_name}}</td>
+                                    
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                       <a href="{{url('get-update-project', [$data->id])}}" class="btn btn-sm btn-primary my-1">
-                                          <i class="bi bi-box-arrow-in-up-right me-1"></i>
-                                          Edit
+                                       <a href="{{url('get-update-project', [$data->id])}}" >
+                                          <i class="bi bi-pencil-square fs-5 me-1"></i>
                                        </a>
-                                       <a href="{{route('backend.project_delete', [$data->id])}}" class="btn btn-sm btn-danger">
-                                          <i class="bi bi-exclamation-octagon me-1"></i>
-                                          Delete
+                                       <a href="{{route('backend.project_delete', [$data->id])}}">
+                                          <i class="bi bi-trash-fill text-danger fs-5 me-1"></i>
                                        </a>
                                     </td>
                                  </tr>

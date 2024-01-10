@@ -4,8 +4,8 @@
          <div class="row">
             <div class="col-md-3 col-sm-12 footer-widget footer-about">
                <h3 class="widget-title">About Us</h3>
-               <img class="footer-logo" src="{{ asset('storage/logo.jpg') }}" alt="" style="width:80px;height:80px;"/>
-               <p>Umaiza Construction Pvt Ltd. a leading in projects Construction, Civil and Interior maintenanace Servicing in Mumbai, Delhi, Himachal Pradesh and Uttrakhand, UP and All over India since 2005.</p>
+               <img class="footer-logo" src="{{ asset('storage/white.png') }}" alt="" style="width:80px;height:80px;"/>
+               <p>Umeza Construction Pvt Ltd. a leading in projects Construction, Civil and Interior maintenanace Servicing in Mumbai, Delhi, Himachal Pradesh and Uttrakhand, UP and All over India since 2005.</p>
                <div class="footer-social">
                </div>
             </div>

@@ -50,7 +50,7 @@
                                  <th scope="col">Instagram</th>
                                  <th scope="col">Linkedin</th> -->
                                  <th scope="col">Date</th>
-                                 <th scope="col" class="no-sort" width="170px">Action</th>
+                                 <th scope="col" class="no-sort" width="190px">Action</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -67,14 +67,15 @@
                                     <td>{{$data->linkedin}}</td> -->
                                     <td>{{$data->created_at}}</td>
                                     <td>
-                                       <a href="{{url('get-update-team', [$data->id])}}" class="btn btn-sm btn-primary">
-                                          <i class="bi bi-box-arrow-in-up-right me-1"></i>
-                                          Edit
+                                       <div class="d-flex gap-3">
+                                       <a href="{{url('get-update-team', [$data->id])}}">
+                                       <i class="bi bi-pencil-square fs-5 me-1"></i>
+                                       
                                        </a>
-                                       <a href="{{route('backend.team_delete', [$data->id])}}" class="btn btn-sm btn-danger">
-                                          <i class="bi bi-exclamation-octagon me-1"></i>
-                                          Delete
+                                       <a href="{{route('backend.team_delete', [$data->id])}}">
+                                          <i class="bi bi-trash-fill text-danger fs-5 me-1"></i>
                                        </a>
+                                       </div>
                                     </td>
                                  </tr>
                               @endforeach

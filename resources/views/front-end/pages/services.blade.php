@@ -19,7 +19,7 @@
    </div>
 </div>
 <section id="main-container" class="main-container">
-   <div class="container-fluid">
+   <div class="container">
       <div class="row">
          <div class="col-md-4">
             <div class="ts-service-box">

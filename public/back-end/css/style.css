@@ -234,7 +234,7 @@ h6 {
   margin-bottom: 30px;
   border: none;
   border-radius: 5px;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .card-header,
@@ -261,6 +261,7 @@ h6 {
 
 .card-body {
   padding: 0 20px 20px 20px;
+
 }
 
 .card-img-overlay {
@@ -721,9 +722,11 @@ h6 {
   background-color: #012970;
   color: #fff;
 }
-
+.nav-item.active .nav-link i {
+  color: #fff;
+}
 .sidebar-nav .nav-link:hover i {
-  color: #4154f1;
+  color: #fff;
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -939,7 +942,12 @@ h6 {
 }
 
 .dashboard .recent-sales .table thead {
-  background: #f6f6fe;
+  background: #012970;
+  color: #fff;
+}
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: #fff !important;
+  color: var(--bs-table-striped-color);
 }
 
 .dashboard .recent-sales .table thead th {
@@ -1239,6 +1247,9 @@ h6 {
   }
 }
 
+.login-wrapper{
+  background-image: linear-gradient(to right, #012970, #272f65, #35355a, #3e3d4f, #444444);
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1265,4 +1276,15 @@ h6 {
 .no-sort .dataTable-sorter::before,
 .no-sort .dataTable-sorter::after{
   display: none;
+}
+.table>thead {
+  color: white !important;
+  background: #012970 !important;
+}
+.fade:not(.show) {
+  opacity: 0;
+  display: none !important;
+}
+.card-bg-gardi{
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }

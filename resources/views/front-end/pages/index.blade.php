@@ -93,7 +93,7 @@
                   <p class="text-justify">
                      Once the potential candidate has been identified, the next step is his selection test, oral or practical, by the employer or his authorized representative. In case we are entrusted with the selection & testing of the prospective employee, we conduct it with the help of a panel of experts, for technical & professional categories, under direct supervision of our professional executives.
                   </p>
-                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i><strong>Learn More</strong></a></p>
+                  <p class="text-center margin-top"><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i><strong>Learn More</strong></a></p>
                </div>
             </div>
          </div>
@@ -110,7 +110,7 @@
                   <p class="text-justify">
                   Umeza Construction Pvt Ltd  transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time.
                   </p>
-                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
+                  <p class="text-center margin-top"><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
          </div>
@@ -125,7 +125,7 @@
                <div class="ts-service-info">
                   <h3 class="service-box-title"><a href="{{ route('front.services') }}">All Types Of Construction Hub</a></h3>
                   <p class="text-justify">Welcome to Umeza Construction Pvt Ltd we transform your dreams into reality. As a leading civil and interior construction company, we are committed to delivering excellence in every project we undertake. With years of experience and a passion for craftsmanship, we bring your vision to life, one brick at a time. </p>
-                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
+                  <p class="text-center margin-top"><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
          </div>
@@ -224,7 +224,13 @@
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
-            <div class="ts-service-box">
+        
+         </div>
+         <!-- <div class="col-md-4 text-center">
+            <img class="service-center-img img-responsive" src="{{asset('storage/services/service-center.jpg')}}" alt="" />
+         </div> -->
+         <div class="col-md-4">
+         <div class="ts-service-box">
                <div class="ts-service-box-img pull-left">
                   <img src="{{asset('storage/icon-image/sale-purchase.png')}}" alt="" />
                </div>
@@ -244,12 +250,7 @@
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
             </div>
-         </div>
-         <div class="col-md-4 text-center">
-            <img class="service-center-img img-responsive" src="{{asset('storage/services/service-center.jpg')}}" alt="" />
-         </div>
-         <div class="col-md-4">
-         <div class="ts-service-box">
+            <div class="ts-service-box">
                <div class="ts-service-box-img pull-left">
                   <img src="{{asset('storage/icon-image/service-icon4.png')}}" alt="" />
                </div>
@@ -258,7 +259,20 @@
                   <p>We consult the client about all type of exterior work ? We have planning to develop your Exterior work.....</p>
                   <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
                </div>
-            </div>
+          </div>
+          <!-- <div class="ts-service-box">
+               <div class="ts-service-box-img pull-left">
+                  <img src="{{asset('storage/icon-image/service-icon4.png')}}" alt="" />
+               </div>
+               <div class="ts-service-box-info">
+                  <h3 class="service-box-title"><a href="{{ route('front.services') }}">Exterior Work</a></h3>
+                  <p>We consult the client about all type of exterior work ? We have planning to develop your Exterior work.....</p>
+                  <p><a class="learn-more" href="{{ route('front.services') }}"><i class="fa fa-caret-right"></i> <strong>Learn More</strong></a></p>
+               </div>
+          </div> -->
+         </div>
+         <div class="col-md-4">
+       
             <div class="ts-service-box">
                <div class="ts-service-box-img pull-left">
                   <img src="{{asset('storage/icon-image/service-icon4.png')}}" alt="" />
@@ -384,7 +398,7 @@
                   <div class="post-body">
                      <div class="latest-post-meta">
                         <span class="post-item-date">
-                        <i class="fa fa-clock-o"></i> July 20, 2017
+                        <!-- <i class="fa fa-clock-o"></i> July 20, 2017 -->
                         </span>
                      </div>
                   </div>

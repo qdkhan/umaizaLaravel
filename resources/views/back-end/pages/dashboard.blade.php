@@ -16,7 +16,7 @@
          <div class="col-lg-12">
             <div class="row">
                <div class="col-xxl-4 col-md-6">
-                  <div class="card info-card sales-card">
+                  <div class="card card-bg-gardi info-card sales-card">
                      <div class="card-body">
                         <h5 class="card-title">Team <span>| </span></h5>
                         <div class="d-flex align-items-center">
@@ -35,7 +35,7 @@
                   </div>
                </div>
                <div class="col-xxl-4 col-md-6">
-                  <div class="card info-card revenue-card">
+                  <div class="card card-bg-gardi info-card revenue-card">
                      <div class="card-body">
                         <h5 class="card-title">Category <span>| </span></h5>
                         <div class="d-flex align-items-center">
@@ -54,7 +54,7 @@
                   </div>
                </div>
                <div class="col-xxl-4 col-md-6">
-                  <div class="card info-card customers-card">
+                  <div class="card card-bg-gardi info-card customers-card">
                      <div class="card-body">
                         <h5 class="card-title">Project <span>| </span></h5>
                         <div class="d-flex align-items-center">

@@ -40,7 +40,7 @@ class AuthController extends Controller
     {
         \Session::flush();
         \Auth::logout();
-        return redirect()->to('login')->with('success', 'Logout successfully.');
+        return redirect()->to('/')->with('success', 'Logout successfully.');
     }
 
     public function getUpdateProfile(Request $request) {

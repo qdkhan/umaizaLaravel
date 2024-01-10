@@ -25,120 +25,119 @@
          <h3 class="section-sub-title">Find Our Location</h3>
       </div>
       <div class="row">
-         <div class="col-md-4 customDiv">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-map-marker"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Visit Our Mumbai Office</h4>
+                  <h5>Visit Our Mumbai Office</h5>
                   <p style="padding-bottom:8px;">
-                  297-B, Behind Takiya Ward Masjid, Kurla West  400070 
+                  Kurla West  400070 
                   </p>
                </div>
             </div>
          </div>
-         <div class="col-md-4 customDiv mb-md-0 mb-3">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-envelope"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Email Us</h4>
+                  <h5>Email Us</h5>
                   <p>umaizaconstruction@gmail.com</p>
                   <p>care@umaizaconstruction.com</p>
                </div>
             </div>
          </div>
-         <div class="col-md-4 customDiv mb-md-0 mb-3">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-phone-square"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Call Us</h4>
-                  <p>(+91) 983-364-5488</p>
+                  <h5>Call Us</h5>
+                  <p>(+91) 993-628-0394</p>
                   <p>(+91) 981-971-6926</p>
                </div>
             </div>
          </div>
       </div>
-      <div class="gap-20"></div>
+      <!-- <div class="gap-20"></div> -->
       <div class="row">
-         <div class="col-md-4 customDiv">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-map-marker"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Visit Our Lucknow Office</h4>
+                  <h5>Visit Our Lucknow Office</h5>
                   <p style="padding-bottom:8px;">
                      Khurram Nagar Lucknow, Uttar Pradesh 226022
                   </p>
                </div>
             </div>
          </div>
-         <div class="col-md-4 customDiv">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-envelope"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Email Us</h4>
+                  <h5>Email Us</h5>
                   <p>umaizaconstruction@gmail.com</p>
                   <p>care@umaizaconstruction.com</p>
                </div>
             </div>
          </div>
-         <div class="col-md-4 customDiv">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-phone-square"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Call Us</h4>
+                  <h5>Call Us</h5>
                   <p>(+91) 786-006-6002</p>
                   <p>(+91) 885-801-7091</p>
                </div>
             </div>
          </div>
       </div>
-      <div class="gap-20"></div>
       <div class="row">
-         <div class="col-md-4 customDiv">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-map-marker"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Visit Our Bahraich Office</h4>
+                  <h5>Visit Our Bahraich Office</h5>
                   <p style="padding-bottom:8px;">
-                     Basheer Ganj Bahraich, Uttar Pradesh 271801
+                     Bakhshipura Bahraich, Uttar Pradesh 271801
                   </p>
                </div>
             </div>
          </div>
-         <div class="col-md-4 customDiv">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-envelope"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Email Us</h4>
+                  <h5>Email Us</h5>
                   <p>umaizaconstruction@gmail.com</p>
                   <p>care@umaizaconstruction.com</p>
                </div>
             </div>
          </div>
-         <div class="col-md-4 customDiv">
+         <div class="col-md-4 customDiv margin-bottom-card">
             <div class="ts-service-box-bg text-center">
                <span class="ts-service-icon icon-round">
                <i class="fa fa-phone-square"></i>
                </span>
                <div class="ts-service-box-content">
-                  <h4>Call Us</h4>
+                  <h5>Call Us</h5>
                   <p>(+91) 786-006-6002</p>
-                  <p>(+91) 700-728-7608</p>
+                  <p>(+91) 885-022-5622</p>
                </div>
             </div>
          </div>
