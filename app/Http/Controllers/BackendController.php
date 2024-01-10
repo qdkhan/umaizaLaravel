@@ -126,7 +126,7 @@ class BackendController extends Controller
                     $category->name = $request->name;
                     $category->slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->name));
                     $category->save();
-                    return redirect()->to('category-list')->with('success', 'Category added successfully.');
+                        return redirect()->to('category-list')->with('success', 'Category added successfully.');
                 }
                 
             } else{
